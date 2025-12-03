@@ -1,11 +1,12 @@
+import AppRouter from '@/app/providers/AppRouter'
 
 function App() {
-
-  return (
-    <>
-      Yeaplanner...work in progress...
-    </>
-  )
+    
+    return (
+        <>
+            <AppRouter />
+        </>
+    )
 }
 
 export default App

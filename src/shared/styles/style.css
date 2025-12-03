@@ -1,8 +1,8 @@
-@import url(./normalize.css);
-@import url(./fonts.css);
-@import url(./variables.css);
-@import url(./global.css);
-@import url(./light.css);
+@import url(normalize.css);
+@import url(fonts.css);
+@import url(variables.css);
+@import url(global.css);
+@import url(light.css);
 
 .header {
     display: grid;
@@ -251,13 +251,13 @@
 }
 
 .todo-list__icon--edit {
-    -webkit-mask-image: url("@/assets/icons/edit.svg");
-    mask-image: url("@/assets/icons/edit.svg");
+    -webkit-mask-image: url("../assets/icons/edit.svg");
+    mask-image: url("../assets/icons/edit.svg");
 }
 
 .todo-list__icon--delete {
-    -webkit-mask-image: url("@/assets/icons/trash.svg");
-    mask-image: url("@/assets/icons/trash.svg");
+    -webkit-mask-image: url("../assets/icons/trash.svg");
+    mask-image: url("../assets/icons/trash.svg");
 }
 
 .todo-list__edit,

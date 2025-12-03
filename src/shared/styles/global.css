@@ -6,12 +6,6 @@ body {
     background-color: var(--color-gray-600);
 }
 
-.container {
-    max-width: 768px;
-    margin-inline: auto;
-    padding-inline: 16px;
-}
-
 .button {
     border: none;
     background-color: transparent;
@@ -162,14 +156,6 @@ body {
     font-size: 13px;
 }
 
-.text-blue {
-    color: var(--color-blue);
-}
-
-.text-purple {
-    color: var(--color-purple-dark);
-}
-
 .select {
     height: 36px;
     border: 1px solid var(--color-gray-700);
@@ -226,8 +212,8 @@ body {
     transition: opacity 0.2s ease, background-color 0.2s ease;
     pointer-events: none;
     translate: 0 -50%;
-    -webkit-mask: url("../assets/icons/x.svg") no-repeat center / contain;
-    mask: url("../assets/icons/x.svg") no-repeat center / contain;
+    -webkit-mask: url("../../../public/icons/x.svg") no-repeat center / contain;
+    mask: url("../../../public/icons/x.svg") no-repeat center / contain;
     cursor: pointer;
 }
 

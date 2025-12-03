@@ -1,6 +1,8 @@
 import { AddTaskForm } from '@/features/add-task'
 import Container from '@/shared/container/ui/Container'
-import { Header } from '@/widgets/Header'
+import { Header } from '@/widgets/header'
+import { TaskList } from '@/widgets/task-list'
+import { TaskTools } from '@/widgets/task-tools'
 
 const HomePage = () => {
     
@@ -10,6 +12,8 @@ const HomePage = () => {
             <main>
                 <Container>
                     <AddTaskForm />
+                    <TaskTools />
+                    <TaskList />
                     
                     {/*<section className='todo-bar'>*/}
                     {/*  <div className='todo-bar__stats'>*/}

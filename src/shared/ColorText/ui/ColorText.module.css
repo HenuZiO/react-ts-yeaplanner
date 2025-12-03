@@ -1,0 +1,7 @@
+.text_blue {
+    color: var(--color-blue);
+}
+
+.text_purple {
+    color: var(--color-purple-dark);
+}

@@ -1,6 +1,6 @@
-import { ColorText } from '@/shared/ColorText'
-import Container from '@/shared/Container/ui/Container'
-import { Logo } from '@/shared/Logo'
+import { ColorText } from '@/shared/color-text'
+import Container from '@/shared/container/ui/Container'
+import { Logo } from '@/shared/logo'
 
 import styles from './Header.module.css'
 

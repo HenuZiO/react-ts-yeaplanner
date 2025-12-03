@@ -4,46 +4,6 @@
 @import url(global.css);
 @import url(light.css);
 
-.todo-form {
-    display: flex;
-    gap: 8px;
-    z-index: 2;
-    height: 46px;
-    margin-top: -23px;
-    margin-bottom: 64px;
-}
-
-.todo-form__field {
-    position: relative;
-    display: flex;
-    flex-grow: 1;
-}
-
-.todo-form__input {
-    flex-grow: 1;
-}
-
-.todo-form__button {
-    gap: 8px;
-    height: 46px;
-    font-size: 14px;
-    z-index: 3;
-}
-
-.todo-form__button:hover {
-    background-color: var(--color-blue);
-}
-
-.todo-form__button:focus-visible {
-    outline-color: var(--color-blue);
-}
-
-.todo-form__icon {
-    width: 16px;
-    height: 16px;
-    pointer-events: none;
-}
-
 .todo-bar {
     display: flex;
     justify-content: space-between;

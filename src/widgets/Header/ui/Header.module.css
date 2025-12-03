@@ -1,0 +1,30 @@
+.header {
+    display: grid;
+    place-items: center;
+    min-height: var(--height-header);
+    background-color: var(--color-gray-700);
+}
+
+.header__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-default);
+}
+
+.header__title {
+    display: inline-flex;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: 4px;
+}

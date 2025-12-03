@@ -1,0 +1,100 @@
+body {
+    color: var(--color-gray-100);
+    font-family: "Inter-Variable", sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    background-color: var(--color-gray-600);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 26px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--color-gray-400) 0%, var(--color-gray-500) 100%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--color-gray-300);
+    outline-offset: 2px;
+}
+
+.theme-toggle::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--color-gray-300);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.theme-toggle--light::before {
+    transform: translateX(24px);
+}
+
+.theme-toggle__icon {
+    position: absolute;
+    font-size: 12px;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.theme-toggle__icon--sun {
+    left: 6px;
+    opacity: 0;
+}
+
+.theme-toggle__icon--moon {
+    right: 6px;
+    opacity: 1;
+}
+
+.theme-toggle--light .theme-toggle__icon--sun {
+    opacity: 1;
+}
+
+.theme-toggle--light .theme-toggle__icon--moon {
+    opacity: 0;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    inline-size: 1px;
+    block-size: 1px;
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.is-visible {
+    display: flex;
+}
+
+.is-hidden {
+    display: none;
+}
+
+
+

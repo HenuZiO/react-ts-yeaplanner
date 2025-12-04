@@ -1,0 +1,115 @@
+@import url(normalize.css);
+@import url(fonts.css);
+@import url(variables.css);
+@import url(global.css);
+@import url(light.css);
+
+.todo-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.todo-bar.is-hidden {
+    display: none;
+}
+
+.todo-bar__stats {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.todo-bar__stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.todo-bar__stat-counter {
+    border-radius: 8px;
+    padding: 2px 8px;
+    color: var(--color-gray-200);
+    font-weight: 500;
+    font-size: 12px;
+    background-color: var(--color-gray-400);
+}
+
+.todo-bar__divider {
+    color: var(--color-gray-400);
+}
+
+.todo-bar__search {
+    position: relative;
+}
+
+.todo-bar__field {
+    position: relative;
+    display: flex;
+}
+
+.todo-bar__search-input {
+    width: 280px;
+    padding-right: 28px;
+}
+
+.todos {
+    padding-block: 24px;
+    border-top: 1px solid var(--color-gray-400);
+}
+
+.todos.is-hidden {
+    display: none;
+}
+
+.todos__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    min-height: 40px;
+}
+
+.todos__title {
+    color: var(--color-gray-200);
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.todos__delete-all {
+    margin-left: auto;
+}
+
+.empty {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    min-height: 242px;
+    border-radius: 8px;
+}
+
+.empty.is-visible {
+    display: flex;
+}
+
+.empty__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.empty__title {
+    color: var(--color-gray-200);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.empty__description {
+    color: var(--color-gray-300);
+}

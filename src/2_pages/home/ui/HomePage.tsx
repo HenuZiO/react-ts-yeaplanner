@@ -1,11 +1,10 @@
-import { AddTaskForm } from '@/3_widgets/task-form'
-import Container from '@/6_shared/container/ui/Container'
 import { Header } from '@/3_widgets/header'
-import { TaskList } from '@/3_widgets/task-list'
+import { AddTaskForm } from '@/3_widgets/task-form'
 import { TaskTools } from '@/3_widgets/task-tools'
+import { TaskList } from '@/3_widgets/task-list'
+import Container from '@/6_shared/container/ui/Container'
 
 const HomePage = () => {
-    
     return (
         <>
             <Header />
@@ -13,7 +12,6 @@ const HomePage = () => {
                 <Container>
                     <AddTaskForm />
                     <TaskTools />
-                    
                     {/*<section className='todo-bar'>*/}
                     {/*  <div className='todo-bar__stats'>*/}
                     {/*    <span className='todo-bar__stat text-blue'>*/}
@@ -76,10 +74,8 @@ const HomePage = () => {
                       {/*    Удалить все*/}
                       {/*  </button>*/}
                       {/*</div>*/}
-                    
                       <TaskList />
                     </section>
-                    
                     {/*<section className='empty' data-js-todo-empty-message>*/}
                     {/*  <img src='/icons/task-list.png' alt='Пустой список' width='56' height='56' />*/}
                     {/*  <div className='empty__text'>*/}
@@ -89,8 +85,8 @@ const HomePage = () => {
                     {/*    </p>*/}
                     {/*  </div>*/}
                     {/*</section>*/}
-      </Container>
-    </main>
+                </Container>
+            </main>
         </>
     )
 }

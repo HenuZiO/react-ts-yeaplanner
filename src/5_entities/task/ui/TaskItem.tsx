@@ -1,5 +1,5 @@
 import React from 'react'
-import type { TaskProps } from '@/5_entities/task/model/taskTypes'
+import type { TaskProps } from '../model/taskTypes'
 
 import { FiEdit3 } from "react-icons/fi";
 import { MdOutlineDelete } from "react-icons/md";

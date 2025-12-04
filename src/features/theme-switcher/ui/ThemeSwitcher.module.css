@@ -1,4 +1,4 @@
-.theme_switcher {
+.switcher {
     position: absolute;
     top: 20px;
     right: 0;
@@ -15,12 +15,12 @@
     overflow: hidden;
 }
 
-.theme_switcher:focus-visible {
+.switcher:focus-visible {
     outline: 2px solid var(--color-gray-300);
     outline-offset: 2px;
 }
 
-.theme_switcher::before {
+.switcher::before {
     content: "";
     position: absolute;
     top: 2px;
@@ -29,38 +29,53 @@
     height: 22px;
     border-radius: 50%;
     background: var(--color-gray-300);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     z-index: 1;
 }
 
-.theme_switcher__light::before {
-    transform: translateX(24px);
+.switcher__light {
+    background: var(--color-gray-500);
 }
 
-.theme_switcher__icon {
+.switcher__light::before {
+    transform: translateX(24px);
+    background: var(--color-gray-400);
+}
+
+.switcher__dark {
+    background-color: var(--color-gray-700);
+}
+
+.switcher__dark::before {
+    transform: translateX(0);
+    background: var(--color-gray-300);
+}
+
+.switcher__icon {
     position: absolute;
     font-size: 12px;
     transition: opacity 0.3s ease;
     z-index: 0;
 }
 
-.theme_switcher__icon__sun {
-    left: 6px;
+.switcher__icon__sun {
+    color: var(--color-purple);
+    top: 5px;
+    left: 5px;
     opacity: 0;
 }
 
-.theme_switcher__icon__moon {
+.switcher__icon__moon {
     color: var(--color-blue);
+    top: 5px;
     right: 5px;
-    top: 4px;
     opacity: 1;
 }
 
-.theme_switcher__light .theme_switcher__icon__sun {
+.switcher__light .switcher__icon__sun {
     opacity: 1;
 }
 
-.theme_switcher__light .theme_switcher__icon__moon {
+.switcher__light .switcher__icon__moon {
     opacity: 0;
 }

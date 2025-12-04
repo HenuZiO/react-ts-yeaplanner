@@ -1,14 +1,12 @@
 import { useAppSelector } from '@/1_app/store/lib/hooks'
-import useDeleteTask from '@/4_features/delete-task/model/useDeleteTask'
+import { useDeleteTask } from '@/4_features/delete-task/'
 import { useToggleTask } from '@/4_features/toggle-task'
-import { TaskItem } from '@/5_entities/task'
-import { selectTasks } from '@/5_entities/task/model/taskSlice'
+import { TaskItem, selectTasks } from '@/5_entities/task'
 
 import styles from './TaskList.module.css'
 
 const TaskList = () => {
     const tasks = useAppSelector(selectTasks)
-    
     const handleToggle = useToggleTask()
     const handleDelete = useDeleteTask()
     

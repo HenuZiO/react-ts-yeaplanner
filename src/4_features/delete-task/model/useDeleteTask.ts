@@ -1,5 +1,5 @@
 import { useAppDispatch } from '@/1_app/store/lib/hooks'
-import { deleteTask } from '@/5_entities/task/model/taskSlice'
+import { deleteTask } from '@/5_entities/task'
 
 const useDeleteTask = () => {
     const dispatch = useAppDispatch()

@@ -1,5 +1,5 @@
 import { useAppDispatch } from '@/1_app/store/lib/hooks'
-import { addTask } from '@/5_entities/task/model/taskSlice'
+import { addTask } from '@/5_entities/task'
 
 const useAddTask = () => {
     const dispatch = useAppDispatch()

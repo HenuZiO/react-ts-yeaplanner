@@ -1,3 +1,4 @@
+import { ThemeSwitcher } from '@/features/theme-switcher'
 import { ColorText } from '@/shared/color-text'
 import Container from '@/shared/container/ui/Container'
 import { Logo } from '@/shared/logo'
@@ -8,10 +9,7 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <Container className={styles.header__container}>
-                <button className='theme-toggle' aria-label='Переключить тему' data-theme-toggle>
-                    <span className='theme-toggle__icon theme-toggle__icon--sun'>☀️</span>
-                    <span className='theme-toggle__icon theme-toggle__icon--moon'>🌙</span>
-                </button>
+                <ThemeSwitcher />
                 <div className={styles.header__logo}>
                     <Logo width={26} height={39} />
                     <h1 className={styles.header__title}>

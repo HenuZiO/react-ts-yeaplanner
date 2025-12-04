@@ -1,2 +1,101 @@
-.task_item {
+.task__item {
+    display: grid;
+    grid-template-columns: 24px 1fr auto;
+    align-items: center;
+    gap: 16px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: var(--color-gray-500);
+    border: 1px solid var(--color-gray-400);
+}
+
+.task__checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: start;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    margin-top: 5px;
+    border: 2px solid var(--color-blue);
+    border-radius: 50%;
+    background: transparent;
+    transition: border-color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.task__checkbox::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-purple-dark);
+    transition: transform 0.15s ease;
+    transform: scale(0);
+}
+
+.task__checkbox:focus-visible {
+    box-shadow: 0 0 0 3px rgba(78, 168, 222, 0.35);
+    outline: none;
+}
+
+.task__checkbox:checked {
+    border-color: var(--color-purple-dark);
+}
+
+.task__checkbox:checked::after {
+    transform: scale(1);
+}
+
+.task__checkbox:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.task__checkbox:checked + .task__label {
+    color: var(--color-gray-300);
+    text-decoration: line-through;
+}
+
+.task__label {
+    display: flex;
+    align-items: start;
+    color: var(--color-gray-200);
+}
+
+.task__actions {
+    display: flex;
+    gap: 8px;
+    align-self: start;
+    position: relative;
+}
+
+.task__icon {
+    display: inline-flex;
+    margin-top: 3px;
+    transition-duration: 0.2s;
+}
+
+.task__edit,
+.task__delete {
+    border: 0;
+    color: var(--color-gray-300);
+    background: transparent;
+    border-radius: 4px;
+    transition: color 0.15s ease;
+    position: relative;
+}
+
+.task__edit:hover,
+.task__delete:hover {
+    color: var(--color-blue);
+}
+
+.task__edit:focus-visible,
+.task__delete:focus-visible {
+    outline: 1px solid var(--color-blue);
+    outline-offset: 2px;
 }

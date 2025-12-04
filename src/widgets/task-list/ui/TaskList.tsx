@@ -1,15 +1,20 @@
+import { TaskItem } from '@/entities/task'
+import React from 'react'
 import styles from './TaskList.module.css'
 
-interface Props {
-}
-
-const TaskList = (props: Props) => {
-    const {} = props
+const TaskList = () => {
+    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+        console.log(event.currentTarget)
+    }
     
     return (
-        <div className={styles.task_list}>
-            Это виджет TaskList - тут будет отрендерен список дел
-        </div>
+        <ul className={styles.task_list}>
+            {new Array(10)
+                .fill(null)
+                .map((_, index) => (
+                    <TaskItem onClick={handleClick} key={index} />
+                ))}
+        </ul>
     )
 }
 

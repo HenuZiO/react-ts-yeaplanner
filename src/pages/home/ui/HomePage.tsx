@@ -13,7 +13,6 @@ const HomePage = () => {
                 <Container>
                     <AddTaskForm />
                     <TaskTools />
-                    <TaskList />
                     
                     {/*<section className='todo-bar'>*/}
                     {/*  <div className='todo-bar__stats'>*/}
@@ -52,31 +51,34 @@ const HomePage = () => {
                     {/*  </form>*/}
                     {/*</section>*/}
                     
-                    {/*<section className='todos'>*/}
-                    {/*  <div className='todos__header'>*/}
-                    {/*    <h2 className='todos__title'>Список задач</h2>*/}
-                    {/*    <label htmlFor='filter-tasks' className='visually-hidden'>Фильтр задач</label>*/}
-                    {/*    <select*/}
-                    {/*        className='todos__filter select'*/}
-                    {/*        id='filter-tasks'*/}
-                    {/*        data-js-todo-filter*/}
-                    {/*        aria-label='Фильтр задач'*/}
-                    {/*    >*/}
-                    {/*      <option value='all'>Все</option>*/}
-                    {/*      <option value='active'>Активные</option>*/}
-                    {/*      <option value='completed'>Выполненные</option>*/}
-                    {/*    </select>*/}
-                    {/*    <button*/}
-                    {/*        className='todos__delete-all button button--purple'*/}
-                    {/*        type='button'*/}
-                    {/*        data-js-todo-delete-all-button*/}
-                    {/*    >*/}
-                    {/*      Удалить все*/}
-                    {/*    </button>*/}
-                    {/*  </div>*/}
+                    <section className='todos'>
+                      {/*<div className='todos__header'>*/}
+                      {/*  <h2 className='todos__title'>Список задач</h2>*/}
+                      {/*  <label*/}
+                      {/*      htmlFor='filter-tasks'*/}
+                      {/*      className='visually-hidden'*/}
+                      {/*  >Фильтр задач</label>*/}
+                      {/*  <select*/}
+                      {/*      className='todos__filter select'*/}
+                      {/*      id='filter-tasks'*/}
+                      {/*      data-js-todo-filter*/}
+                      {/*      aria-label='Фильтр задач'*/}
+                      {/*  >*/}
+                      {/*    <option value='all'>Все</option>*/}
+                      {/*    <option value='active'>Активные</option>*/}
+                      {/*    <option value='completed'>Выполненные</option>*/}
+                      {/*  </select>*/}
+                      {/*  <button*/}
+                      {/*      className='todos__delete-all button button--purple'*/}
+                      {/*      type='button'*/}
+                      {/*      data-js-todo-delete-all-button*/}
+                      {/*  >*/}
+                      {/*    Удалить все*/}
+                      {/*  </button>*/}
+                      {/*</div>*/}
                     
-                    {/*  <ul className='todo-list' data-js-todo-list></ul>*/}
-                    {/*</section>*/}
+                      <TaskList />
+                    </section>
                     
                     {/*<section className='empty' data-js-todo-empty-message>*/}
                     {/*  <img src='/icons/task-list.png' alt='Пустой список' width='56' height='56' />*/}

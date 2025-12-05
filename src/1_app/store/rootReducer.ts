@@ -1,5 +1,5 @@
-import tasksReducer from '@/5_entities/task/model/taskSlice'
-import themeReducer from '@/4_features/theme-switcher/model/themeSlice'
+import { tasksReducer } from '@/5_entities/task'
+import { themeReducer } from '@/4_features/theme-switcher'
 import { combineReducers } from '@reduxjs/toolkit'
 
 export const rootReducer = combineReducers({

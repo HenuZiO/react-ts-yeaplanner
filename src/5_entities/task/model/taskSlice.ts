@@ -10,6 +10,9 @@ const tasksSlice = createSlice({
     name: 'tasks',
     initialState,
     reducers: {
+        initTasks: (state, action: PayloadAction<Task[]>) => {
+            state.items = action.payload
+        },
         addTask: {
             reducer: (state, action: PayloadAction<Task>) => {
                 state.items.push(action.payload)
@@ -39,7 +42,7 @@ const tasksSlice = createSlice({
     }
 })
 
-export const { addTask, toggleTask, deleteTask, editTask, clearAllTasks } = tasksSlice.actions
+export const { initTasks, addTask, toggleTask, deleteTask, editTask, clearAllTasks } = tasksSlice.actions
 
 export const selectTasks = (state: RootState) => state.tasks.items
 export const selectTaskById = (id: string) => (state: RootState) => state.tasks.items.find(task => task.id === id)

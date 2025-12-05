@@ -8,7 +8,7 @@ export interface TaskProps {
     title: string
     completed: boolean
     onToggle?: () => void
-    onEdit?: () => void
+    onEdit?: (newTitle: string) => void
     onDelete?: () => void
 }
 

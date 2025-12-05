@@ -5,6 +5,7 @@
     gap: 16px;
     border-radius: 8px;
     padding: 16px;
+    max-height: 60px;
     background-color: var(--color-gray-500);
     border: 1px solid var(--color-gray-400);
 }
@@ -17,7 +18,7 @@
     width: 16px;
     height: 16px;
     margin: 0;
-    margin-top: 5px;
+    margin-top: 6px;
     border: 2px solid var(--color-blue);
     border-radius: 50%;
     background: transparent;
@@ -60,10 +61,21 @@
     text-decoration: line-through;
 }
 
+.task__input {
+    outline: none;
+    background-color: var(--color-gray-400);
+    border-radius: 5px;
+    border: none;
+    color: var(--color-gray-200);
+    padding: 4px 0;
+    animation: fadeIn 0.3s ease-out;
+}
+
 .task__label {
     display: flex;
     align-items: start;
     color: var(--color-gray-200);
+
 }
 
 .task__actions {
@@ -98,4 +110,13 @@
 .task__delete:focus-visible {
     outline: 1px solid var(--color-blue);
     outline-offset: 2px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

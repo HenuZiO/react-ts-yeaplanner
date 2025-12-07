@@ -46,5 +46,7 @@ export const { initTasks, addTask, toggleTask, deleteTask, editTask, clearAllTas
 
 export const selectTasks = (state: RootState) => state.tasks.items
 export const selectTaskById = (id: string) => (state: RootState) => state.tasks.items.find(task => task.id === id)
+export const selectTasksCount = (state: RootState) => state.tasks.items.length
+export const selectCompletedTasksCount = (state: RootState) => state.tasks.items.filter(task => task.completed).length
 
 export default tasksSlice.reducer

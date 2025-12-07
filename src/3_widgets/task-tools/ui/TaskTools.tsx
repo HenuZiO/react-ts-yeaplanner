@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { useAppSelector } from '@/1_app/store/lib/hooks'
 import { useDeleteTasks } from '@/4_features/delete-all-tasks'
+import { selectCompletedTasksCount, selectTasksCount } from '@/5_entities/task'
 import { ColorText } from '@/6_shared/color-text'
 import { Button } from '@/6_shared/ui/button'
 import { Input } from '@/6_shared/ui/input'
@@ -10,8 +12,10 @@ import styles from './TaskTools.module.css'
 
 const TaskTools = () => {
     const [filter, setFilter] = useState('all')
-    
     const handleDeleteAllTasks = useDeleteTasks()
+    
+    const totalTasksCount = useAppSelector(selectTasksCount)
+    const completedTasksCount = useAppSelector(selectCompletedTasksCount)
     
     return (
         <section className={styles.tools}>
@@ -19,12 +23,16 @@ const TaskTools = () => {
                 <div className={styles.tools__stats}>
                     <ColorText className={styles.tools__stat} color='blue'>
                         Всего задач
-                        <span className={styles.tools__counter}>0</span>
+                        <span className={styles.tools__counter}>
+                            {totalTasksCount}
+                        </span>
                     </ColorText>
                     <span className={styles.tools__divider}>|</span>
                     <ColorText className={styles.tools__stat} color='purple'>
                         Выполнено
-                        <span className={styles.tools__counter}>0</span>
+                        <span className={styles.tools__counter}>
+                            {completedTasksCount}
+                        </span>
                     </ColorText>
                 </div>
                 <form className={styles.tools__search}>

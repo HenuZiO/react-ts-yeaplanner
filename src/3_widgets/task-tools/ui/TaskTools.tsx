@@ -1,14 +1,17 @@
+import { useState } from 'react'
+import { useDeleteTasks } from '@/4_features/delete-all-tasks'
 import { ColorText } from '@/6_shared/color-text'
 import { Button } from '@/6_shared/ui/button'
 import { Input } from '@/6_shared/ui/input'
 import { Label } from '@/6_shared/ui/label'
 import { Select } from '@/6_shared/ui/select'
-import { useState } from 'react'
 
 import styles from './TaskTools.module.css'
 
 const TaskTools = () => {
     const [filter, setFilter] = useState('all')
+    
+    const handleDeleteAllTasks = useDeleteTasks()
     
     return (
         <section className={styles.tools}>
@@ -55,6 +58,7 @@ const TaskTools = () => {
                 <Button
                     className={styles.tools__button}
                     variant='purple'
+                    onClick={handleDeleteAllTasks}
                 >
                     Удалить все
                 </Button>

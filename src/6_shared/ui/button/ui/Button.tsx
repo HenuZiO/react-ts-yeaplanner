@@ -1,19 +1,27 @@
+import cn from '@/6_shared/lib/classNames'
 import React, { forwardRef } from 'react'
+
 import styles from './Button.module.css'
 
-type ButtonVariant = {
-    variant?: 'blue' | 'purple' | 'clear'
-    className?: string
+const buttonVariants = {
+    blue: styles.button__blue,
+    purple: styles.button__purple,
+    clear: styles.button__clear
 }
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & ButtonVariant
+type ButtonVariant = keyof typeof buttonVariants
+
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    variant?: ButtonVariant
+}
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ({ variant = 'blue', className, children, type = 'button', ...rest }, ref) => {
+        
         return (
             <button
                 ref={ref}
-                className={`${styles.button} ${styles[`button__${variant}`]} ${className ?? ''}`}
+                className={cn(styles.button, buttonVariants[variant], className)}
                 type={type}
                 {...rest}
             >

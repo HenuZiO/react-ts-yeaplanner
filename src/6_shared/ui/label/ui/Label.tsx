@@ -1,15 +1,15 @@
-import type { FC, LabelHTMLAttributes } from 'react'
+import cn from '@/6_shared/lib/classNames'
+import type { LabelHTMLAttributes } from 'react'
+
 import styles from './Label.module.css'
 
-type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & {
-    className?: string;
-};
+type LabelProps = LabelHTMLAttributes<HTMLLabelElement>
 
-const Label: FC<LabelProps> = (props) => {
+const Label = (props: LabelProps) => {
     const { className, children, ...rest } = props;
     
     return (
-        <label className={`${styles.label} ${className || ''}`} {...rest}>
+        <label className={cn(styles.label, className)} {...rest}>
             {children}
         </label>
     )

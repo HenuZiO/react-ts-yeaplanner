@@ -1,55 +1,63 @@
+import { ColorText } from '@/6_shared/color-text'
+import { Button } from '@/6_shared/ui/button'
+import { Input } from '@/6_shared/ui/input'
+import { Label } from '@/6_shared/ui/label'
+import { Select } from '@/6_shared/ui/select'
+import { useState } from 'react'
+
+import styles from './TaskTools.module.css'
+
 const TaskTools = () => {
+    const [filter, setFilter] = useState('all')
+    
     return (
-        <section className='todo-bar'>
-            <div className='todo-bar__stats'>
-                <span className='todo-bar__stat text-blue'>
-                    Всего задач
-                    <span className='todo-bar__stat-counter'>0</span>
-                </span>
-                <span className='todo-bar__divider'>|</span>
-                <span className='todo-bar__stat text-purple'>
-                    Выполнено
-                    <span className='todo-bar__stat-counter'> 0 </span>
-                </span>
-            </div>
-            
-            <form className='todo-bar__search'>
-                <div className='todo-bar__field input-field'>
-                    <label htmlFor='search-tasks' className='visually-hidden'>
+        <section className={styles.tools}>
+            <div className={styles.tools__header}>
+                <div className={styles.tools__stats}>
+                    <ColorText className={styles.tools__stat} color='blue'>
+                        Всего задач
+                        <span className={styles.tools__counter}>0</span>
+                    </ColorText>
+                    <span className={styles.tools__divider}>|</span>
+                    <ColorText className={styles.tools__stat} color='purple'>
+                        Выполнено
+                        <span className={styles.tools__counter}>0</span>
+                    </ColorText>
+                </div>
+                <form className={styles.tools__search}>
+                    <Label className='visually-hidden' htmlFor='task-search'>
                         Поиск задач
-                    </label>
-                    <input
-                        className='todo-bar__search-input input input--small'
-                        type='search'
+                    </Label>
+                    <Input
+                        className={styles.tools__input}
+                        id='task-search'
+                        variant='small'
                         placeholder='Поиск задач...'
                     />
-                    <button
-                        className='input-clear'
-                        type='button'
-                        aria-label='Очистить'
-                    ></button>
-                </div>
-            </form>
+                </form>
+            </div>
             
-            <div className='todos__header'>
-                <h2 className='todos__title'>Список задач</h2>
-                <label htmlFor='filter-tasks' className='visually-hidden'>
+            <div className={styles.tools__controls}>
+                <h2 className={styles.tools__title}>Список задач</h2>
+                <Label className='visually-hidden' htmlFor='task-filter'>
                     Фильтр задач
-                </label>
-                <select
-                    className='todos__filter select'
+                </Label>
+                <Select
+                    id='task-filter'
+                    value={filter}
+                    onChange={event => setFilter(event.target.value)}
                     aria-label='Фильтр задач'
                 >
                     <option value='all'>Все</option>
                     <option value='active'>Активные</option>
                     <option value='completed'>Выполненные</option>
-                </select>
-                <button
-                    className='todos__delete-all button button--purple'
-                    type='button'
+                </Select>
+                <Button
+                    className={styles.tools__button}
+                    variant='purple'
                 >
                     Удалить все
-                </button>
+                </Button>
             </div>
         </section>
     )

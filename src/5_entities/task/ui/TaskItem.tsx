@@ -1,10 +1,11 @@
+import React from 'react'
 import useInlineEdit from '@/6_shared/lib/useInlineEdit'
 import { Label } from '@/6_shared/ui/label'
-import React from 'react'
+
+import type { TaskProps } from '../model/taskTypes'
 
 import { FiEdit3 } from "react-icons/fi";
 import { MdOutlineDelete } from "react-icons/md";
-import type { TaskProps } from '../model/taskTypes'
 
 import styles from './TaskItem.module.css'
 

@@ -26,7 +26,7 @@
     color: var(--color-gray-200);
 }
 
-.input--small {
+.input__small {
     height: 36px;
     padding-inline: 12px;
     font-size: 13px;

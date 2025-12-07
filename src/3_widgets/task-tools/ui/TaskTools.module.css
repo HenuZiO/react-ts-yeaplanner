@@ -1,2 +1,68 @@
-.task_tools {
+.tools {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.tools__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.tools__controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    min-height: 40px;
+    border-top: 1px solid var(--color-gray-400);
+    padding-top: 24px;
+}
+
+.tools__stats {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tools__stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tools__counter {
+    border-radius: 8px;
+    padding: 2px 8px;
+    color: var(--color-gray-200);
+    font-weight: 500;
+    font-size: 12px;
+    background-color: var(--color-gray-400);
+}
+
+.tools__divider {
+    color: var(--color-gray-400);
+}
+
+.tools__search {
+    position: relative;
+    display: flex;
+}
+
+.tools__input {
+    width: 280px;
+    padding-right: 28px;
+}
+
+.tools__title {
+    color: var(--color-gray-200);
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.tools__button {
+    margin-left: auto;
 }

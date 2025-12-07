@@ -57,7 +57,7 @@ const AddTaskForm = () => {
                 </Button>
             </div>
             
-            <Button className={styles.todo_form__button} type='submit'>
+            <Button className={styles.todo_form__button} type='submit' variant='blue'>
                 <MdOutlineAddBox size={16} />
                 <span>Добавить</span>
             </Button>

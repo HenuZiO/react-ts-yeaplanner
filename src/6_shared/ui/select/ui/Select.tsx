@@ -1,14 +1,25 @@
+import cn from '@/6_shared/lib/classNames'
+import React, { forwardRef } from 'react'
 import styles from './Select.module.css'
 
-interface Props {
+interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+    children: React.ReactNode
 }
 
-const Select = (props: Props) => {
-    const {} = props
-    
-    return (
-        <div className={styles.select}>Select</div>
-    )
-}
+const Select = forwardRef<HTMLSelectElement, SelectProps>(
+    ({ className, children, ...rest }, ref) => {
+        return (
+            <select
+                ref={ref}
+                className={cn(styles.select, className)}
+                {...rest}
+            >
+                {children}
+            </select>
+        )
+    }
+)
+
+Select.displayName = 'Select'
 
 export default Select

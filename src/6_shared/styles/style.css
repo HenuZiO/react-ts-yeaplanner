@@ -8,10 +8,6 @@
     display: none;
 }
 
-.todos {
-    padding-block: 12px 24px;
-}
-
 .todos.is-hidden {
     display: none;
 }

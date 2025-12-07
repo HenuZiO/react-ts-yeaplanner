@@ -1,4 +1,8 @@
-.task_list {
+.tasks {
+    padding-block: 24px;
+}
+
+.tasks__list {
     display: flex;
     flex-direction: column;
     gap: 12px;

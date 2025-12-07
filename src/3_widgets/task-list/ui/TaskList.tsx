@@ -16,8 +16,8 @@ const TaskList = () => {
     useInitTasks()
     
     return (
-        <section className='todos'>
-            <ul className={styles.task_list}>
+        <section className={styles.tasks}>
+            <ul className={styles.tasks__list}>
                 {tasks.map((task) => (
                     <TaskItem
                         key={task.id}

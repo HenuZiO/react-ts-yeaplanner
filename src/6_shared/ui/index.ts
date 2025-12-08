@@ -5,5 +5,6 @@ import Input from './input/Input'
 import Label from './label/Label'
 import Logo from './logo/Logo'
 import Select from './select/Select'
+import Modal from './modal/Modal'
 
-export { Button, ColorText, Container, Input, Label, Logo, Select }
+export { Button, ColorText, Container, Input, Label, Logo, Select, Modal }

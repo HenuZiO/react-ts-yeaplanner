@@ -29,4 +29,6 @@
 
 .tools__button {
     margin-left: auto;
+    display: flex;
+    gap: 8px;
 }

@@ -1,0 +1,38 @@
+.modal__overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal__content {
+    background-color: var(--color-gray-500);
+    border: 1px solid var(--color-gray-400);
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 400px;
+    width: 90%;
+    overflow-y: auto;
+}
+
+.modal__title {
+    margin: 0 0 16px 0;
+    color: var(--color-gray-200);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.modal__message {
+    margin-bottom: 24px;
+    color: var(--color-gray-300);
+    font-size: 14px;
+}
+
+.modal__actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}

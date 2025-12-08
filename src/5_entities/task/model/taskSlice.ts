@@ -1,12 +1,12 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '@/1_app/store/store'
+import { createSelector, createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import type { Task, TaskState } from './taskTypes'
 
 const initialState: TaskState = {
     items: []
 }
 
-const tasksSlice = createSlice({
+const taskSlice = createSlice({
     name: 'tasks',
     initialState,
     reducers: {
@@ -19,7 +19,8 @@ const tasksSlice = createSlice({
             },
             prepare: (title: string) => ({
                 payload: {
-                    id: crypto.randomUUID() ?? Date.now().toString(),
+                    id: crypto.randomUUID() ?? Date.now()
+                        .toString(),
                     title,
                     completed: false
                 } as Task
@@ -42,11 +43,44 @@ const tasksSlice = createSlice({
     }
 })
 
-export const { initTasks, addTask, toggleTask, deleteTask, editTask, clearAllTasks } = tasksSlice.actions
+export const {
+    initTasks,
+    addTask,
+    toggleTask,
+    deleteTask,
+    editTask,
+    clearAllTasks
+} = taskSlice.actions
 
 export const selectTasks = (state: RootState) => state.tasks.items
 export const selectTaskById = (id: string) => (state: RootState) => state.tasks.items.find(task => task.id === id)
 export const selectTasksCount = (state: RootState) => state.tasks.items.length
 export const selectCompletedTasksCount = (state: RootState) => state.tasks.items.filter(task => task.completed).length
+export const selectFilteredTasks = createSelector(
+    [
+        selectTasks,
+        (state: RootState) => state.filters.filter,
+        (state: RootState) => state.filters.searchQuery
+    ],
+    (tasks, filter, searchQuery) => {
+        let filtered = tasks
+        
+        if (filter === 'active') {
+            filtered = filtered.filter(task => !task.completed)
+        } else if (filter === 'completed') {
+            filtered = filtered.filter(task => task.completed)
+        }
+        
+        if (searchQuery.trim()) {
+            const query = searchQuery.toLowerCase()
+            
+            filtered = filtered.filter(task =>
+                task.title.toLowerCase().includes(query)
+            )
+        }
+        
+        return filtered
+    }
+)
 
-export default tasksSlice.reducer
+export default taskSlice.reducer

@@ -1,0 +1,9 @@
+.tools__search {
+    position: relative;
+    display: flex;
+}
+
+.tools__input {
+    width: 280px;
+    padding-right: 28px;
+}

@@ -7,7 +7,6 @@ import { IoMdClose } from 'react-icons/io'
 
 import styles from './TaskSearchInput.module.css'
 
-
 const TaskSearchInput = () => {
     const inputRef = useRef<HTMLInputElement | null>(null);
     const dispatch = useAppDispatch()

@@ -20,13 +20,3 @@ body {
     clip-path: inset(50%);
 }
 
-.is-visible {
-    display: flex;
-}
-
-.is-hidden {
-    display: none;
-}
-
-
-

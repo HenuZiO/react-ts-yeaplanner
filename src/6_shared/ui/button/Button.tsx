@@ -6,6 +6,7 @@ import styles from './Button.module.css'
 const buttonVariants = {
     blue: styles.button__blue,
     purple: styles.button__purple,
+    outlined: styles.button__outlined,
     clear: styles.button__clear
 }
 

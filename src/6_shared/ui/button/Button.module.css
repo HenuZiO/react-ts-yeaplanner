@@ -50,3 +50,15 @@
     color: var(--color-blue);
 }
 
+.button__outlined {
+    background-color: transparent;
+    border: 1px solid var(--color-gray-400);
+}
+
+.button__outlined:hover {
+    border-color: var(--color-gray-300);
+}
+
+.button__outlined:focus-visible {
+    outline-color: var(--color-blue);
+}

@@ -12,7 +12,7 @@ const AddTaskForm = () => {
     const inputRef = useRef<HTMLInputElement | null>(null);
     const handleAdd = useAddTask()
     
-    const onTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setTitle(event.target.value)
     }
     
@@ -41,7 +41,7 @@ const AddTaskForm = () => {
                     className={styles.todo_form__input}
                     ref={inputRef}
                     value={title}
-                    onChange={onTitleChange}
+                    onChange={handleChange}
                     placeholder='Введите название новой задачи...'
                     required={true}
                 />

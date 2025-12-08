@@ -1,6 +1,7 @@
 import React from 'react'
 import { Label } from '@/6_shared/ui/'
 import { useInlineEdit } from '@/6_shared/lib/'
+import { cn } from '@/6_shared/lib/'
 
 import type { TaskProps } from '../model/taskTypes'
 
@@ -44,13 +45,16 @@ const TaskItem = (props: TaskProps) => {
         if (!isEditing) handleToggle(event)
     }
     
+    const animatedClass = (completed || isEditing) ? styles.task__edit_hidden : 0
+    
     return (
-        <li className={styles.task__item} onClick={handleItemClick}>
+        <li className={styles.task__item}>
             <input
                 className={styles.task__checkbox}
                 type='checkbox'
                 checked={completed}
                 readOnly={true}
+                onClick={handleItemClick}
             />
             {isEditing ? (
                 <input
@@ -63,24 +67,24 @@ const TaskItem = (props: TaskProps) => {
                     onBlur={handleBlur}
                 />
             ) : (
-                <Label className={styles.task__label}>
-                    {title}
+                <Label className={styles.task__label} onClick={handleItemClick}>
+                    <span className={styles.task__text}>
+                        {title}
+                    </span>
                 </Label>
             )}
             <div className={styles.task__actions}>
-                {!completed && !isEditing && (
-                    <button
-                        className={styles.task__edit}
-                        type='button'
-                        onClick={handleEdit}
-                        aria-label='Редактировать'
-                        title='Редактировать'
-                    >
-                        <span className={styles.task__icon}>
-                            <FiEdit3 size={18} />
-                        </span>
+                <button
+                    className={cn(styles.task__edit, animatedClass)}
+                    type='button'
+                    onClick={handleEdit}
+                    aria-label='Редактировать'
+                    title='Редактировать'
+                >
+                    <span className={styles.task__icon}>
+                        <FiEdit3 size={18} />
+                    </span>
                 </button>
-                )}
                 <button
                     className={styles.task__delete}
                     type='button'

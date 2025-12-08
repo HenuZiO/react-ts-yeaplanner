@@ -22,7 +22,7 @@
     border: 2px solid var(--color-blue);
     border-radius: 50%;
     background: transparent;
-    transition: border-color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+    transition-duration: 0.2s;
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
@@ -34,7 +34,7 @@
     height: 8px;
     border-radius: 50%;
     background: var(--color-purple-dark);
-    transition: transform 0.15s ease;
+    transition: transform 0.2s ease;
     transform: scale(0);
 }
 
@@ -56,11 +56,6 @@
     cursor: not-allowed;
 }
 
-.task__checkbox:checked + .task__label {
-    color: var(--color-gray-300);
-    text-decoration: line-through;
-}
-
 .task__input {
     outline: none;
     background-color: var(--color-gray-400);
@@ -68,14 +63,38 @@
     border: none;
     color: var(--color-gray-200);
     padding: 4px 0;
-    animation: fadeIn 0.3s ease-out;
 }
 
 .task__label {
     display: flex;
     align-items: start;
     color: var(--color-gray-200);
+}
 
+.task__text {
+    position: relative;
+    display: inline-flex;
+}
+
+.task__text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 1px;
+    width: 100%;
+    background-color: var(--color-gray-300);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.task__checkbox:checked + .task__label {
+    color: var(--color-gray-300);
+}
+
+.task__checkbox:checked + .task__label .task__text::after {
+    transform: scaleX(1);
 }
 
 .task__actions {
@@ -97,8 +116,12 @@
     color: var(--color-gray-300);
     background: transparent;
     border-radius: 4px;
-    transition: color 0.15s ease;
+    transition-duration: 0.2s;
     position: relative;
+}
+.task__edit {
+    opacity: 1;
+    animation: fadeIn 0.2s ease-out;
 }
 
 .task__edit:hover,
@@ -112,11 +135,8 @@
     outline-offset: 2px;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.task__edit_hidden {
+    opacity: 0.3;
+    pointer-events: none;
 }
+

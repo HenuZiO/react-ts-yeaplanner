@@ -8,7 +8,7 @@ const Logo = (props: LogoProps) => {
     
     return (
         <>
-            <img src='/icons/rocket.svg' alt='YeaPlanner - Logo' width={width} height={height} />
+            <img src='/logos/rocket.svg' alt='YeaPlanner - Logo' width={width} height={height} />
         </>
     )
 }

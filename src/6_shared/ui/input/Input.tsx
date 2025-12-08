@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import cn from '@/6_shared/lib/classNames'
+import cn from '@/6_shared/lib/utils/classNames'
 
 import styles from './Input.module.css'
 

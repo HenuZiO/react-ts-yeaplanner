@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from '@/1_app/store/lib/hooks'
 import { selectTheme, toggleTheme } from '@/4_features/theme-switcher/'
-import cn from '@/6_shared/lib/classNames'
+import cn from '@/6_shared/lib/utils/classNames'
 
 import { GoMoon, GoSun } from "react-icons/go";
 

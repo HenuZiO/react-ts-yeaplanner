@@ -1,7 +1,7 @@
 import { TaskFilterSelect, TaskSearchInput } from '@/4_features/filter-tasks/'
 import { useDeleteTasks } from '@/4_features/delete-all-tasks'
 import { TaskStats } from '@/5_entities/task/'
-import { Button } from '@/6_shared/ui/button'
+import { Button } from '@/6_shared/ui'
 
 import styles from './TaskTools.module.css'
 

@@ -1,7 +1,6 @@
 import { useAppSelector } from '@/1_app/store/lib/hooks'
-import { selectTasksCount } from '@/5_entities/task'
-import { selectCompletedTasksCount } from '@/5_entities/task'
-import { ColorText } from '@/6_shared/color-text'
+import { selectTasksCount, selectCompletedTasksCount } from '@/5_entities/task'
+import { ColorText } from '@/6_shared/ui/'
 
 import styles from './TaskStats.module.css'
 

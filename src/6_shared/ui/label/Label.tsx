@@ -1,9 +1,9 @@
-import cn from '@/6_shared/lib/classNames'
-import type { LabelHTMLAttributes } from 'react'
+import React from 'react'
+import cn from '@/6_shared/lib/utils/classNames'
 
 import styles from './Label.module.css'
 
-type LabelProps = LabelHTMLAttributes<HTMLLabelElement>
+type LabelProps = React.LabelHTMLAttributes<HTMLLabelElement>
 
 const Label = (props: LabelProps) => {
     const { className, children, ...rest } = props;

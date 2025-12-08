@@ -1,8 +1,7 @@
 import React from 'react'
 import { useAppDispatch, useAppSelector } from '@/1_app/store/lib/hooks'
+import { Label, Select } from '@/6_shared/ui'
 import { setFilter, selectFilter } from '../model/filterSlice'
-import { Label } from '@/6_shared/ui/label'
-import { Select } from '@/6_shared/ui/select'
 import type { TaskFilter } from '../model/filterTypes'
 
 const filterOptions: { value: TaskFilter; label: string }[] = [

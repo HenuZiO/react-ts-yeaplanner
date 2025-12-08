@@ -1,9 +1,9 @@
-interface Props {
+interface LogoProps {
     width: number
     height: number
 }
 
-const Logo = (props: Props) => {
+const Logo = (props: LogoProps) => {
     const { width, height } = props
     
     return (

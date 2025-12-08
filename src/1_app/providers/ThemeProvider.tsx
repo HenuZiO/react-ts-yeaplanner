@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '@/1_app/store/lib/hooks'
 import { selectTheme, setTheme, type Theme } from '@/4_features/theme-switcher/'
-import useLocalStorage from '@/6_shared/lib/useLocalStorage'
+import useLocalStorage from '@/6_shared/lib/hooks/useLocalStorage'
 
 interface Props {
     children: React.ReactNode

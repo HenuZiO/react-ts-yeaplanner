@@ -1,4 +1,4 @@
-import cn from '@/6_shared/lib/classNames'
+import cn from '@/6_shared/lib/utils/classNames'
 import React, { forwardRef } from 'react'
 import styles from './Select.module.css'
 

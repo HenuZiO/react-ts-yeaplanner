@@ -1,11 +1,12 @@
-import cn from '@/6_shared/lib/classNames'
-import  { type ReactNode } from 'react'
+import React from 'react'
+import cn from '@/6_shared/lib/utils/classNames'
+
 import styles from './ColorText.module.css'
 
 type ColorVariants = 'blue' | 'purple'
 
 interface Props {
-    children: ReactNode
+    children: React.ReactNode
     color: ColorVariants
     className?: string
 }

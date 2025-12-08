@@ -1,8 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { useAddTask } from '@/4_features/add-task'
-import { Button } from '@/6_shared/ui/button'
-import { Input } from '@/6_shared/ui/input'
-import { Label } from '@/6_shared/ui/label'
+import { Button, Input, Label } from '@/6_shared/ui/'
 
 import { IoMdClose } from "react-icons/io";
 import { MdOutlineAddBox } from "react-icons/md";

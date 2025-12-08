@@ -1,7 +1,5 @@
 import { ThemeSwitcher } from '@/4_features/theme-switcher'
-import { ColorText } from '@/6_shared/color-text'
-import Container from '@/6_shared/container/ui/Container'
-import { Logo } from '@/6_shared/logo'
+import { ColorText, Logo, Container } from '@/6_shared/ui/'
 
 import styles from './Header.module.css'
 

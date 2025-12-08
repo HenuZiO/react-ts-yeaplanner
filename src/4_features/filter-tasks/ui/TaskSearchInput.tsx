@@ -1,8 +1,7 @@
 import React from 'react'
 import { useAppDispatch, useAppSelector } from '@/1_app/store/lib/hooks'
 import { setSearchQuery, selectSearchQuery } from '@/4_features/filter-tasks/model/filterSlice'
-import { Input } from '@/6_shared/ui/input'
-import { Label } from '@/6_shared/ui/label'
+import { Input, Label } from '@/6_shared/ui'
 
 import styles from './TaskSearchInput.module.css'
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import useInlineEdit from '@/6_shared/lib/useInlineEdit'
-import { Label } from '@/6_shared/ui/label'
+import { Label } from '@/6_shared/ui/'
+import { useInlineEdit } from '@/6_shared/lib/'
 
 import type { TaskProps } from '../model/taskTypes'
 

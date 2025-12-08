@@ -6,10 +6,10 @@ import TaskStats from './ui/TaskStats'
 import tasksReducer from './model/taskSlice'
 
 // Reducers
-import { addTask, clearAllTasks, deleteTask, editTask, initTasks, toggleTask } from './model/taskSlice'
+import { addTask, clearAllTasks, deleteTask, editTask, initTasks, toggleTask, startDelete, cancelDelete } from './model/taskSlice'
 
 // Selectors
-import { selectCompletedTasksCount, selectTaskById, selectTasks, selectTasksCount, selectFilteredTasks } from './model/taskSlice'
+import { selectCompletedTasksCount, selectTaskById, selectTasks, selectTasksCount, selectFilteredTasks, selectPendingDeleteId } from './model/taskSlice'
 
 // Types
 import type { Task } from './model/taskTypes'
@@ -20,6 +20,7 @@ export {
     initTasks, addTask, toggleTask,
     deleteTask, editTask, clearAllTasks,
     selectTasks, selectTaskById, selectTasksCount,
-    selectCompletedTasksCount, selectFilteredTasks
+    selectCompletedTasksCount, selectFilteredTasks,
+    startDelete, cancelDelete, selectPendingDeleteId
 }
 export type { Task }

@@ -3,7 +3,8 @@ import { createSelector, createSlice, type PayloadAction } from '@reduxjs/toolki
 import type { Task, TaskState } from './taskTypes'
 
 const initialState: TaskState = {
-    items: []
+    items: [],
+    pendingDeleteId: null
 }
 
 const taskSlice = createSlice({
@@ -36,10 +37,17 @@ const taskSlice = createSlice({
         },
         deleteTask: (state, action: PayloadAction<string>) => {
             state.items = state.items.filter(task => task.id !== action.payload)
+            state.pendingDeleteId = null
         },
         clearAllTasks: (state) => {
             state.items = []
-        }
+        },
+        startDelete: (state, action: PayloadAction<string>) => {
+            state.pendingDeleteId = action.payload
+        },
+        cancelDelete: (state) => {
+            state.pendingDeleteId = null
+        },
     }
 })
 
@@ -49,7 +57,9 @@ export const {
     toggleTask,
     deleteTask,
     editTask,
-    clearAllTasks
+    clearAllTasks,
+    startDelete,
+    cancelDelete
 } = taskSlice.actions
 
 export const selectTasks = (state: RootState) => state.tasks.items
@@ -82,5 +92,6 @@ export const selectFilteredTasks = createSelector(
         return filtered
     }
 )
+export const selectPendingDeleteId = (state: RootState) => state.tasks.pendingDeleteId
 
 export default taskSlice.reducer

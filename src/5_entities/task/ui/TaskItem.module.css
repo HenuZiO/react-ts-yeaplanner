@@ -8,6 +8,20 @@
     max-height: 60px;
     background-color: var(--color-gray-500);
     border: 1px solid var(--color-gray-400);
+    transition-duration: 0.3s;
+}
+
+.task__item_placeholder {
+    grid-column: 2 / -1;
+    height: 60px;
+}
+
+.task__item_deleting {
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+    transform: scaleY(50%);
+    transform-origin: top
 }
 
 .task__checkbox {
@@ -111,7 +125,9 @@
 }
 
 .task__edit,
-.task__delete {
+.task__delete,
+.task__confirm,
+.task__cancel {
     border: 0;
     color: var(--color-gray-300);
     background: transparent;
@@ -119,18 +135,29 @@
     transition-duration: 0.2s;
     position: relative;
 }
+
+.task__confirm {
+    color: var(--color-blue-dark);
+}
+
 .task__edit {
     opacity: 1;
-    animation: fadeIn 0.2s ease-out;
 }
 
 .task__edit:hover,
-.task__delete:hover {
+.task__delete:hover,
+.task__confirm:hover {
     color: var(--color-blue);
 }
 
+.task__cancel:hover {
+    color: var(--color-gray-200);
+}
+
 .task__edit:focus-visible,
-.task__delete:focus-visible {
+.task__delete:focus-visible,
+.task__confirm:focus-visible,
+.task__cancel:focus-visible {
     outline: 1px solid var(--color-blue);
     outline-offset: 2px;
 }

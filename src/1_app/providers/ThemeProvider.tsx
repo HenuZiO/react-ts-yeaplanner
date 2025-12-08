@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useAppDispatch, useAppSelector } from '@/1_app/store/lib/hooks'
 import { selectTheme, setTheme, type Theme } from '@/4_features/theme-switcher/'
 import useLocalStorage from '@/6_shared/lib/hooks/useLocalStorage'
@@ -12,15 +12,20 @@ const ThemeProvider = ({ children }: Props) => {
     const dispatch = useAppDispatch()
     
     const [storedTheme, setStoredTheme] = useLocalStorage<Theme>('theme', 'dark')
+    const isInitialMount = useRef(false)
     
     useEffect(() => {
         dispatch(setTheme(storedTheme))
     }, [dispatch, storedTheme]);
     
     useEffect(() => {
-        setStoredTheme(theme)
-        document.body.classList.remove('theme_light', 'theme_dark')
-        document.body.classList.add(`theme_${theme}`)
+        if (isInitialMount.current) {
+            setStoredTheme(theme)
+            document.body.classList.remove('theme_light', 'theme_dark')
+            document.body.classList.add(`theme_${theme}`)
+        }
+        
+        isInitialMount.current = true
     }, [theme, setStoredTheme])
     
     return <>{children}</>

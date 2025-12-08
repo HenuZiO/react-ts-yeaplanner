@@ -27,6 +27,7 @@ const TaskSearchInput = () => {
             <Label className='visually-hidden' htmlFor='task-search'>
                 Поиск задач
             </Label>
+            
             <Input
                 className={styles.tools__input}
                 id='task-search'
@@ -36,6 +37,7 @@ const TaskSearchInput = () => {
                 value={searchQuery}
                 onChange={handleChange}
             />
+            
             <Button
                 variant='clear'
                 onClick={handleClear}

@@ -1,6 +1,6 @@
 body {
     color: var(--color-gray-100);
-    font-family: "Inter-Variable", sans-serif;
+    font-family: "Inter-Variable", system-ui, sans-serif;
     font-size: 14px;
     line-height: 1.4;
     background-color: var(--color-gray-600);

@@ -6,19 +6,7 @@ interface EditOptions {
     onCancel?: () => void
 }
 
-interface EditReturn {
-    isEditing: boolean
-    editValue: string
-    inputRef: React.RefObject<HTMLInputElement | null>
-    startEdit: () => void
-    setEditValue: (value: string) => void
-    saveEdit: () => void
-    cancelEdit: () => void
-    handleKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void
-    handleBlur: () => void
-}
-
-const useInlineEdit = (options: EditOptions): EditReturn => {
+const useInlineEdit = (options: EditOptions) => {
     const { initialValue, onSave, onCancel } = options
     
     const [isEditing, setIsEditing] = useState(false)

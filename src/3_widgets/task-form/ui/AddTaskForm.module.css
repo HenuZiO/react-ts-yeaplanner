@@ -17,6 +17,13 @@
     flex-grow: 1;
 }
 
+.todo_form__clear {
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .todo_form__button {
     gap: 8px;
     height: 46px;

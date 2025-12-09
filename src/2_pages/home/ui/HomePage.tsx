@@ -5,7 +5,6 @@ import { TaskTools } from '@/3_widgets/task-tools'
 import { Container } from '@/6_shared/ui/'
 
 const HomePage = () => {
-
     
     return (
         <>

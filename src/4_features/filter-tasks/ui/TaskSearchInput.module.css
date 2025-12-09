@@ -7,3 +7,10 @@
     width: 280px;
     padding-right: 28px;
 }
+
+.tools__clear {
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+}

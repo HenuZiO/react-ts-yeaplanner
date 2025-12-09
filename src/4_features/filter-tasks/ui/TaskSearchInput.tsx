@@ -38,6 +38,7 @@ const TaskSearchInput = () => {
             />
             
             <Button
+                className={styles.tools__clear}
                 variant='clear'
                 onClick={handleClear}
                 aria-label='Очистить'

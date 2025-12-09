@@ -47,15 +47,23 @@ const AddTaskForm = () => {
                 />
                 
                 <Button
+                    className={styles.todo_form__clear}
                     variant='clear'
                     onClick={handleClear}
-                    aria-label='Очистить'
+                    aria-label='Очистить поле'
+                    title='Очистить поле'
                 >
                     {title && <IoMdClose size={16} />}
                 </Button>
             </div>
             
-            <Button className={styles.todo_form__button} type='submit' variant='blue'>
+            <Button
+                className={styles.todo_form__button}
+                type='submit'
+                variant='blue'
+                aria-label='Добавить задачу'
+                title='Добавить задачу'
+            >
                 <MdOutlineAddBox size={16} />
                 <span>Добавить</span>
             </Button>

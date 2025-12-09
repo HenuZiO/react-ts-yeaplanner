@@ -36,6 +36,8 @@ const TaskTools = () => {
                         className={styles.tools__button}
                         variant='purple'
                         onClick={openModal}
+                        aria-label='Удалить все'
+                        title='Удалить все'
                     >
                         <FaRegTrashCan size={14} />
                         <span>Удалить все</span>

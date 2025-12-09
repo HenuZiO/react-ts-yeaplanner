@@ -1,21 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useAppSelector } from '@/1_app/store/lib/hooks'
-import { selectPendingDeleteId } from '@/5_entities/task'
+import { TaskItemActions, selectPendingDeleteId } from '@/5_entities/task'
 import { Label } from '@/6_shared/ui/'
-import { cn, useInlineEdit } from '@/6_shared/lib/'
-
+import { cn, useInlineEdit, useDeleteConfirmation } from '@/6_shared/lib/'
 import type { TaskProps } from '../model/taskTypes'
-
-import { FiEdit3 } from "react-icons/fi";
-import { MdOutlineDelete } from "react-icons/md";
-import { IoIosCheckmarkCircle, IoMdClose } from "react-icons/io";
 
 import styles from './TaskItem.module.css'
 
 const TaskItem = (props: TaskProps) => {
     const { id, title, completed, onToggle, onEdit, onDelete, onStartDelete, onCancelDelete } = props
-    
-    const [isDeleting, setIsDeleting] = useState(false)
     
     const pendingDeleteId = useAppSelector(selectPendingDeleteId)
     const isConfirming = pendingDeleteId === id
@@ -31,6 +24,11 @@ const TaskItem = (props: TaskProps) => {
     } = useInlineEdit({
         initialValue: title,
         onSave: (newTitle) => onEdit?.(newTitle)
+    })
+    
+    const { isDeleting, confirmDelete } = useDeleteConfirmation({
+        onDelete: onDelete!,
+        animationDuration: 300
     })
     
     const handleToggle = (event: React.MouseEvent) => {
@@ -50,11 +48,7 @@ const TaskItem = (props: TaskProps) => {
     
     const handleConfirmDelete = (event: React.MouseEvent) => {
         event.stopPropagation()
-        setIsDeleting(true)
-        
-        setTimeout(() => {
-            onDelete?.()
-        }, 300)
+        confirmDelete()
     }
     
     const handleCancelDelete = (event: React.MouseEvent) => {
@@ -62,26 +56,18 @@ const TaskItem = (props: TaskProps) => {
         onCancelDelete?.()
     }
     
-    const itemClass = cn(
-        styles.task__item,
-        isDeleting ? styles.task__item_deleting : ''
-    )
-    
-    const editButtonClass = cn(
-        styles.task__edit,
-        (completed || isEditing) ? styles.task__edit_hidden : ''
-    )
+    const itemClassName = cn(styles.task__item, isDeleting && styles.task__item_deleting)
     
     if (isDeleting) {
         return (
-            <li className={itemClass}>
+            <li className={itemClassName}>
                 <div className={styles.task__item_placeholder} />
             </li>
         )
     }
     
     return (
-        <li className={itemClass}>
+        <li className={itemClassName}>
             <input
                 className={styles.task__checkbox}
                 type='checkbox'
@@ -108,59 +94,15 @@ const TaskItem = (props: TaskProps) => {
                 </Label>
             )}
             
-            <div className={styles.task__actions}>
-                {isConfirming ? (
-                    <button
-                        className={styles.task__confirm}
-                        type='button'
-                        onClick={handleConfirmDelete}
-                        aria-label='Подтвердить удаление'
-                        title='Подтвердить удаление'
-                    >
-                        <span className={styles.task__icon}>
-                            <IoIosCheckmarkCircle size={18} />
-                        </span>
-                    </button>
-                ) : (
-                    <button
-                        className={editButtonClass}
-                        type='button'
-                        onClick={handleEdit}
-                        aria-label='Редактировать'
-                        title='Редактировать'
-                    >
-                        <span className={styles.task__icon}>
-                            <FiEdit3 size={18} />
-                        </span>
-                    </button>
-                )}
-                
-                {isConfirming ? (
-                    <button
-                        className={styles.task__cancel}
-                        type='button'
-                        onClick={handleCancelDelete}
-                        aria-label='Отменить удаление'
-                        title='Отменить удаление'
-                    >
-                        <span className={styles.task__icon}>
-                            <IoMdClose size={18} />
-                        </span>
-                    </button>
-                ) : (
-                    <button
-                        className={styles.task__delete}
-                        type='button'
-                        onClick={handleStartDelete}
-                        aria-label='Удалить'
-                        title='Удалить'
-                    >
-                        <span className={styles.task__icon}>
-                            <MdOutlineDelete size={18} />
-                        </span>
-                    </button>
-                )}
-            </div>
+            <TaskItemActions
+                isConfirming={isConfirming}
+                completed={completed}
+                isEditing={isEditing}
+                onEdit={handleEdit}
+                onStartDelete={handleStartDelete}
+                onConfirmDelete={handleConfirmDelete}
+                onCancelDelete={handleCancelDelete}
+            />
         </li>
     )
 }

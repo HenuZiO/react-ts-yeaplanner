@@ -5,7 +5,4 @@ export { ThemeSwitcher } from './ui/ThemeSwitcher'
 export { default as themeReducer } from './model/themeSlice'
 
 // Selectors
-export { selectTheme, setTheme, toggleTheme } from './model/themeSlice'
-
-// Types
-export type { Theme, ThemeState } from './model/themeTypes'
+export { selectTheme } from './model/themeSlice'

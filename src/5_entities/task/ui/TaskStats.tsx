@@ -1,6 +1,6 @@
-import { selectTasksCount, selectCompletedTasksCount } from '@/5_entities/task'
 import { useAppSelector } from '@/6_shared/lib'
 import { ColorText } from '@/6_shared/ui/'
+import { selectTasksCount, selectCompletedTasksCount } from '../model/taskSlice'
 
 import styles from './TaskStats.module.css'
 

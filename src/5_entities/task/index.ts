@@ -1,7 +1,6 @@
 // UI Components
 export { TaskItem } from './ui/TaskItem'
 export { TaskStats } from './ui/TaskStats'
-export { TaskItemActions } from './ui/TaskItemActions'
 
 // Hooks
 export { useCancelDelete } from './model/hooks/useCancelDelete'
@@ -14,26 +13,7 @@ export { useToggleTask } from './model/hooks/useToggleTask'
 export { default as tasksReducer } from './model/taskSlice'
 
 // Reducers
-export {
-    initTasks,
-    addTask,
-    toggleTask,
-    editTask,
-    deleteTask,
-    clearAllTasks,
-    startDelete,
-    cancelDelete
-} from './model/taskSlice'
+export { addTask, clearAllTasks } from './model/taskSlice'
 
 // Selectors
-export {
-    selectTasks,
-    selectTaskById,
-    selectTasksCount,
-    selectCompletedTasksCount,
-    selectFilteredTasks,
-    selectPendingDeleteId
-} from './model/taskSlice'
-
-// Types
-export type { Task, TaskProps, TaskState, TaskItemActionsProps } from './model/taskTypes'
+export { selectTasks, selectFilteredTasks } from './model/taskSlice'

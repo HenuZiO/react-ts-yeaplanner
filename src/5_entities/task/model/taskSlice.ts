@@ -1,7 +1,7 @@
 import { createSelector, createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '@/1_app/store'
-import type { Task, TaskState } from '@/5_entities/task'
+import type { Task, TaskState } from './taskTypes'
 
 const initialState: TaskState = {
     items: [],
@@ -12,9 +12,6 @@ const taskSlice = createSlice({
     name: 'tasks',
     initialState,
     reducers: {
-        initTasks: (state, action: PayloadAction<Task[]>) => {
-            state.items = action.payload
-        },
         addTask: {
             reducer: (state, action: PayloadAction<Task>) => {
                 state.items.push(action.payload)
@@ -53,7 +50,6 @@ const taskSlice = createSlice({
 })
 
 export const {
-    initTasks,
     addTask,
     toggleTask,
     deleteTask,
@@ -64,7 +60,6 @@ export const {
 } = taskSlice.actions
 
 export const selectTasks = (state: RootState) => state.tasks.items
-export const selectTaskById = (id: string) => (state: RootState) => state.tasks.items.find(task => task.id === id)
 export const selectTasksCount = (state: RootState) => state.tasks.items.length
 export const selectCompletedTasksCount = (state: RootState) => state.tasks.items.filter(task => task.completed).length
 export const selectFilteredTasks = createSelector(

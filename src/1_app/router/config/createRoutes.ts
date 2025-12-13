@@ -1,4 +1,4 @@
 import { createBrowserRouter } from 'react-router'
-import { routes } from '@/1_app/router/config/routes'
+import { routes } from './routes'
 
 export const router = createBrowserRouter(routes)

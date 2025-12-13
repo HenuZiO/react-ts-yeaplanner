@@ -1,5 +1,5 @@
-import { selectTheme, toggleTheme } from '@/4_features/theme-switcher/'
 import { cn, useAppDispatch, useAppSelector } from '@/6_shared/lib'
+import { selectTheme, toggleTheme } from '../model/themeSlice'
 
 import { GoMoon, GoSun } from "react-icons/go";
 

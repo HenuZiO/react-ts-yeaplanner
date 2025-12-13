@@ -1,8 +1,8 @@
 import React from 'react'
-import { setFilter, selectFilter } from '@/4_features/filter-tasks'
-import type { TaskFilter } from '@/4_features/filter-tasks'
 import { useAppDispatch, useAppSelector } from '@/6_shared/lib'
 import { Label, Select } from '@/6_shared/ui'
+import { setFilter, selectFilter } from '../model/filterSlice'
+import type { TaskFilter } from '../model/filterTypes'
 
 const filterOptions: { value: TaskFilter; label: string }[] = [
     { value: 'all', label: 'Все' },

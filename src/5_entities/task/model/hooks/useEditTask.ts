@@ -1,5 +1,5 @@
-import { editTask } from '@/5_entities/task'
 import { useAppDispatch } from '@/6_shared/lib'
+import { editTask } from '../taskSlice'
 
 export const useEditTask = () => {
     const dispatch = useAppDispatch()

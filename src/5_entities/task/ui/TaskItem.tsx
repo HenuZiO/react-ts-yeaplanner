@@ -1,8 +1,9 @@
 import React from 'react'
-import { selectPendingDeleteId, TaskItemActions } from '@/5_entities/task'
 import type { TaskProps } from '@/5_entities/task'
 import { Label } from '@/6_shared/ui/'
 import { cn, useAppSelector, useDeleteConfirmation, useInlineEdit } from '@/6_shared/lib/'
+import { selectPendingDeleteId } from '../model/taskSlice'
+import { TaskItemActions } from './TaskItemActions'
 
 import styles from './TaskItem.module.css'
 

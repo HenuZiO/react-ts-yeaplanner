@@ -1,5 +1,5 @@
-import type { TaskItemActionsProps } from '@/5_entities/task'
 import { cn } from '@/6_shared/lib'
+import type { TaskItemActionsProps } from '../model/taskTypes'
 
 import { IoIosCheckmarkCircle, IoMdClose } from 'react-icons/io'
 import { FiEdit3 } from 'react-icons/fi'

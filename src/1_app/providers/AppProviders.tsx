@@ -1,7 +1,8 @@
 import React from 'react'
-import { StoreProvider } from '@/1_app/providers/store/StoreProvider'
-import { AppInitializer } from '@/1_app/providers/app/AppInitializer'
-import { ThemeProvider } from '@/1_app/providers/theme/ThemeProvider'
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistor } from '@/1_app/store'
+import { StoreProvider } from './StoreProvider'
+import { ThemeProvider } from './ThemeProvider'
 
 interface Props {
     children: React.ReactNode
@@ -10,11 +11,11 @@ interface Props {
 export const AppProviders = ({ children }: Props) => {
     return (
         <StoreProvider>
-            <AppInitializer>
+            <PersistGate loading={null} persistor={persistor}>
                 <ThemeProvider>
                     {children}
                 </ThemeProvider>
-            </AppInitializer>
+            </PersistGate>
         </StoreProvider>
     )
 }

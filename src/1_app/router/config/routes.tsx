@@ -1,4 +1,4 @@
-import { HomePage } from '@/2_pages/home'
+import { HomePage } from '@/2_pages'
 
 export const routes = [
     {

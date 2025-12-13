@@ -1,9 +1,9 @@
-interface LogoProps {
+type Props = {
     width: number
     height: number
 }
 
-const Logo = (props: LogoProps) => {
+export const Logo = (props: Props) => {
     const { width, height } = props
     
     return (
@@ -12,5 +12,3 @@ const Logo = (props: LogoProps) => {
         </>
     )
 }
-
-export default Logo

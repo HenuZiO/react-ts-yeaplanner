@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import cn from '@/6_shared/lib/utils/classNames'
+import { cn } from '@/6_shared/lib'
 
 import styles from './Input.module.css'
 
@@ -10,11 +10,11 @@ const inputVariants = {
 
 type InputVariant = keyof typeof inputVariants
 
-type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+type Props = React.InputHTMLAttributes<HTMLInputElement> & {
     variant?: InputVariant
 }
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
+export const Input = forwardRef<HTMLInputElement, Props>(
     ({ className, type = 'text', variant = 'default', ...rest }, ref) => {
         
         return (
@@ -29,5 +29,3 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 )
 
 Input.displayName = 'Input'
-
-export default Input

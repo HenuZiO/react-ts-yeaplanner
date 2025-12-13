@@ -3,12 +3,13 @@ import { cn } from '@/6_shared/lib'
 
 import styles from './Container.module.css'
 
-interface ContainerProps {
+type Props = {
     children: React.ReactNode
     className?: string
 }
 
-const Container = ({ children, className }: ContainerProps) => {
+export const Container = (props: Props) => {
+    const { children, className } = props
     
     return (
         <div className={cn(styles.container, className)}>
@@ -16,5 +17,3 @@ const Container = ({ children, className }: ContainerProps) => {
         </div>
     )
 }
-
-export default Container

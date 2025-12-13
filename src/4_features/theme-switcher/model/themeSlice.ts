@@ -1,12 +1,7 @@
-import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
-import type { RootState } from '@/1_app/store/store'
-
-export type Theme = 'light' | 'dark'
-
-interface ThemeState {
-    theme: Theme
-}
+import type { PayloadAction } from '@reduxjs/toolkit'
+import type { RootState } from '@/1_app/store'
+import type { Theme, ThemeState } from '@/4_features/theme-switcher/model/themeTypes'
 
 const initialState: ThemeState = {
     theme: 'dark'

@@ -1,10 +1,8 @@
-import Button from './button/Button'
-import ColorText from './color-text/ColorText'
-import Container from './container/Container'
-import Input from './input/Input'
-import Label from './label/Label'
-import Logo from './logo/Logo'
-import Select from './select/Select'
-import Modal from './modal/Modal'
-
-export { Button, ColorText, Container, Input, Label, Logo, Select, Modal }
+export { Button } from './button'
+export { ColorText } from './color-text'
+export { Container } from './container'
+export { Input } from './input'
+export { Label } from './label'
+export { Logo } from './logo'
+export { Modal } from './modal'
+export { Select } from './select'

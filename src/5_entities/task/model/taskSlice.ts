@@ -1,6 +1,7 @@
-import type { RootState } from '@/1_app/store/store'
-import { createSelector, createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import type { Task, TaskState } from './taskTypes'
+import { createSelector, createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
+import type { RootState } from '@/1_app/store'
+import type { Task, TaskState } from '@/5_entities/task'
 
 const initialState: TaskState = {
     items: [],

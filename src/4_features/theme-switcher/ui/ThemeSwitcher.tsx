@@ -1,12 +1,11 @@
-import { useAppDispatch, useAppSelector } from '@/1_app/store/lib/hooks'
 import { selectTheme, toggleTheme } from '@/4_features/theme-switcher/'
-import cn from '@/6_shared/lib/utils/classNames'
+import { cn, useAppDispatch, useAppSelector } from '@/6_shared/lib'
 
 import { GoMoon, GoSun } from "react-icons/go";
 
 import styles from './ThemeSwitcher.module.css'
 
-const ThemeSwitcher = () => {
+export const ThemeSwitcher = () => {
     const theme = useAppSelector(selectTheme)
     const dispatch = useAppDispatch()
     
@@ -29,5 +28,3 @@ const ThemeSwitcher = () => {
         </button>
     )
 }
-
-export default ThemeSwitcher

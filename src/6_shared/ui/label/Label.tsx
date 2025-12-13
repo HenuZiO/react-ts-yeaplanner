@@ -1,11 +1,11 @@
 import React from 'react'
-import cn from '@/6_shared/lib/utils/classNames'
+import { cn } from '@/6_shared/lib'
 
 import styles from './Label.module.css'
 
-type LabelProps = React.LabelHTMLAttributes<HTMLLabelElement>
+type Props = React.LabelHTMLAttributes<HTMLLabelElement>
 
-const Label = (props: LabelProps) => {
+export const Label = (props: Props) => {
     const { className, children, ...rest } = props;
     
     return (
@@ -14,5 +14,3 @@ const Label = (props: LabelProps) => {
         </label>
     )
 }
-
-export default Label

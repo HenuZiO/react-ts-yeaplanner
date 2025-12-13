@@ -26,9 +26,3 @@
     font-weight: 600;
     margin: 0;
 }
-
-.tools__button {
-    margin-left: auto;
-    display: flex;
-    gap: 8px;
-}

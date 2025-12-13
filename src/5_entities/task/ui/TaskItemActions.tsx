@@ -1,5 +1,5 @@
+import type { TaskItemActionsProps } from '@/5_entities/task'
 import { cn } from '@/6_shared/lib'
-import type { TaskItemActionsProps } from '@/5_entities/task/model/taskTypes'
 
 import { IoIosCheckmarkCircle, IoMdClose } from 'react-icons/io'
 import { FiEdit3 } from 'react-icons/fi'
@@ -7,7 +7,7 @@ import { MdOutlineDelete } from 'react-icons/md'
 
 import styles from './TaskItem.module.css'
 
-const TaskItemActions = (props: TaskItemActionsProps) => {
+export const TaskItemActions = (props: TaskItemActionsProps) => {
     const {
         isConfirming,
         completed,
@@ -74,5 +74,3 @@ const TaskItemActions = (props: TaskItemActionsProps) => {
         </div>
     )
 }
-
-export default TaskItemActions

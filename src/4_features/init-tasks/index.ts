@@ -1,3 +1,1 @@
-import useInitTasks from './model/useInitTasks'
-
-export { useInitTasks }
+export { useInitTasks } from './model/useInitTasks'

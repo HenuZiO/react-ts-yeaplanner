@@ -4,7 +4,7 @@ import { Button } from '@/6_shared/ui'
 
 import styles from './Modal.module.css'
 
-interface ModalProps {
+type ModalProps = {
     isOpen: boolean
     onClose: () => void
     onConfirm: () => void
@@ -14,7 +14,7 @@ interface ModalProps {
     cancelText?: string
 }
 
-const Modal = (props: ModalProps) => {
+export const Modal = (props: ModalProps) => {
     const { isOpen, onClose, onConfirm, title, message, confirmText = 'Подтвердить', cancelText = 'Отменить' } = props
     
     if (!isOpen) return null
@@ -57,5 +57,3 @@ const Modal = (props: ModalProps) => {
     
     return createPortal(modalContent, document.body)
 }
-
-export default Modal

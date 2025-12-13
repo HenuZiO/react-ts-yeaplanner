@@ -1,6 +1,6 @@
 import styles from './TaskListEmpty.module.css'
 
-const TaskListEmpty = () => {
+export const TaskListEmpty = () => {
     return (
         <div className={styles.empty}>
             <img src='/icons/task-list.png' alt='Пустой список' width='56' height='56' />
@@ -13,5 +13,3 @@ const TaskListEmpty = () => {
         </div>
     );
 };
-
-export default TaskListEmpty;

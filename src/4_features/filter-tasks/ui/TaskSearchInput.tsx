@@ -1,13 +1,13 @@
 import React, { useRef } from 'react'
-import { useAppDispatch, useAppSelector } from '@/1_app/store/lib/hooks'
 import { selectSearchQuery, setSearchQuery } from '@/4_features/filter-tasks'
+import { useAppDispatch, useAppSelector } from '@/6_shared/lib'
 import { Button, Input, Label } from '@/6_shared/ui'
 
 import { IoMdClose } from 'react-icons/io'
 
 import styles from './TaskSearchInput.module.css'
 
-const TaskSearchInput = () => {
+export const TaskSearchInput = () => {
     const inputRef = useRef<HTMLInputElement | null>(null);
     const dispatch = useAppDispatch()
     const searchQuery = useAppSelector(selectSearchQuery)
@@ -21,8 +21,12 @@ const TaskSearchInput = () => {
         inputRef.current?.focus()
     }
     
+    const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+    }
+    
     return (
-        <form className={styles.tools__search}>
+        <form className={styles.tools__search} onSubmit={onSubmit}>
             <Label className='visually-hidden' htmlFor='task-search'>
                 Поиск задач
             </Label>
@@ -48,5 +52,3 @@ const TaskSearchInput = () => {
         </form>
     )
 }
-
-export default TaskSearchInput

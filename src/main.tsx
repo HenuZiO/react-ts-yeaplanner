@@ -1,18 +1,15 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from '@/1_app/App'
-import StoreProvider from '@/1_app/providers/StoreProvider'
-import ThemeProvider from '@/1_app/providers/ThemeProvider'
+import { AppProviders } from '@/1_app/providers'
 
-import '@/6_shared/styles/style.css'
+import '@/1_app/styles/style.css'
 
 createRoot(document.getElementById('root')!)
-  .render(
+    .render(
         <StrictMode>
-          <StoreProvider>
-            <ThemeProvider>
-              <App />
-            </ThemeProvider>
-          </StoreProvider>
+            <AppProviders>
+                <App />
+            </AppProviders>
         </StrictMode>
-  )
+    )

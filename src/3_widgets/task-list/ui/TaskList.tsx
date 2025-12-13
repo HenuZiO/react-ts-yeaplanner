@@ -1,24 +1,24 @@
-import { useAppSelector } from '@/1_app/store/lib/hooks'
 import { TaskListEmpty } from '@/3_widgets/task-list'
-import { useDeleteTask } from '@/4_features/delete-task/'
-import { useEditTask } from '@/4_features/edit-task'
-import { useInitTasks } from '@/4_features/init-tasks/'
-import { useToggleTask } from '@/4_features/toggle-task'
-import { useStartDelete } from '@/4_features/start-delete-task'
-import { useCancelDelete } from '@/4_features/cancel-delete-task'
-import { TaskItem, selectFilteredTasks } from '@/5_entities/task'
+import {
+    selectFilteredTasks,
+    TaskItem,
+    useCancelDelete,
+    useDeleteTask,
+    useEditTask,
+    useStartDelete,
+    useToggleTask
+} from '@/5_entities/task'
+import { useAppSelector } from '@/6_shared/lib'
 
 import styles from './TaskList.module.css'
 
-const TaskList = () => {
+export const TaskList = () => {
     const tasks = useAppSelector(selectFilteredTasks)
     const handleToggle = useToggleTask()
     const handleEdit = useEditTask()
     const handleDelete = useDeleteTask()
     const startDelete = useStartDelete()
     const cancelDelete = useCancelDelete()
-    
-    useInitTasks()
     
     if (tasks.length === 0) {
         return <TaskListEmpty />
@@ -44,5 +44,3 @@ const TaskList = () => {
         </section>
     )
 }
-
-export default TaskList

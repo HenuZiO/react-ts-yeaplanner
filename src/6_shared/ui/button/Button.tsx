@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import cn from '@/6_shared/lib/utils/classNames'
+import { cn } from '@/6_shared/lib'
 
 import styles from './Button.module.css'
 
@@ -12,11 +12,11 @@ const buttonVariants = {
 
 type ButtonVariant = keyof typeof buttonVariants
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     variant?: ButtonVariant
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = forwardRef<HTMLButtonElement, Props>(
     ({ variant = 'blue', className, children, type = 'button', ...rest }, ref) => {
         
         return (
@@ -33,5 +33,3 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 )
 
 Button.displayName = 'Button'
-
-export default Button

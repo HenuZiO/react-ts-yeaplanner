@@ -1,8 +1,6 @@
-import type { ArgumentArray } from 'classnames'
 import classNames from 'classnames'
+import type { ArgumentArray } from 'classnames'
 
-export function cn(...args: ArgumentArray) {
+export const cn = (...args: ArgumentArray) => {
     return classNames(...args)
 }
-
-export default cn

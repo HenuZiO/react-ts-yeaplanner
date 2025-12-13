@@ -1,10 +1,10 @@
 import { Header } from '@/3_widgets/header'
-import { AddTaskForm } from '@/3_widgets/task-form'
 import { TaskList } from '@/3_widgets/task-list'
 import { TaskTools } from '@/3_widgets/task-tools'
+import { AddTaskForm } from '@/4_features/add-task-form'
 import { Container } from '@/6_shared/ui/'
 
-const HomePage = () => {
+export const HomePage = () => {
     
     return (
         <>
@@ -19,5 +19,3 @@ const HomePage = () => {
         </>
     )
 }
-
-export default HomePage

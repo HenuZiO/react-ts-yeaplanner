@@ -1,4 +1,4 @@
-import AppRouter from '@/1_app/providers/AppRouter'
+import { AppRouter } from '@/1_app/router'
 
 function App() {
     

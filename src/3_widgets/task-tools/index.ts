@@ -1,3 +1,1 @@
-import TaskTools from './ui/TaskTools'
-
-export { TaskTools }
+export { TaskTools } from './ui/TaskTools'

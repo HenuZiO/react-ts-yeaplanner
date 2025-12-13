@@ -1,8 +1,8 @@
 import React from 'react'
-import { useAppDispatch, useAppSelector } from '@/1_app/store/lib/hooks'
+import { setFilter, selectFilter } from '@/4_features/filter-tasks'
+import type { TaskFilter } from '@/4_features/filter-tasks'
+import { useAppDispatch, useAppSelector } from '@/6_shared/lib'
 import { Label, Select } from '@/6_shared/ui'
-import { setFilter, selectFilter } from '../model/filterSlice'
-import type { TaskFilter } from '../model/filterTypes'
 
 const filterOptions: { value: TaskFilter; label: string }[] = [
     { value: 'all', label: 'Все' },
@@ -10,7 +10,7 @@ const filterOptions: { value: TaskFilter; label: string }[] = [
     { value: 'completed', label: 'Выполненные' }
 ]
 
-const TaskFilterSelect = () => {
+export const TaskFilterSelect = () => {
     const dispatch = useAppDispatch()
     const currentFilter = useAppSelector(selectFilter)
     
@@ -23,6 +23,7 @@ const TaskFilterSelect = () => {
             <Label className='visually-hidden' htmlFor='task-filter'>
                 Фильтр задач
             </Label>
+            
             <Select
                 id='task-filter'
                 value={currentFilter}
@@ -39,5 +40,3 @@ const TaskFilterSelect = () => {
     )
 
 }
-
-export default TaskFilterSelect

@@ -1,10 +1,10 @@
-import { useAppSelector } from '@/1_app/store/lib/hooks'
 import { selectTasksCount, selectCompletedTasksCount } from '@/5_entities/task'
+import { useAppSelector } from '@/6_shared/lib'
 import { ColorText } from '@/6_shared/ui/'
 
 import styles from './TaskStats.module.css'
 
-const TaskStats = () => {
+export const TaskStats = () => {
     const totalTasksCount = useAppSelector(selectTasksCount)
     const completedTasksCount = useAppSelector(selectCompletedTasksCount)
     
@@ -16,7 +16,9 @@ const TaskStats = () => {
                     {totalTasksCount}
                 </span>
             </ColorText>
+            
             <span className={styles.divider}>|</span>
+            
             <ColorText className={styles.stat} color='purple'>
                 Выполнено
                 <span className={styles.counter}>
@@ -26,5 +28,3 @@ const TaskStats = () => {
         </div>
     );
 };
-
-export default TaskStats;

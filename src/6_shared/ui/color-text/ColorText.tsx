@@ -1,24 +1,27 @@
 import React from 'react'
-import cn from '@/6_shared/lib/utils/classNames'
+import { cn } from '@/6_shared/lib'
 
 import styles from './ColorText.module.css'
 
-type ColorVariants = 'blue' | 'purple'
+const textColorVariants = {
+    blue: styles.text__blue,
+    purple: styles.text__purple,
+}
 
-interface Props {
+type TextColorVariants = keyof typeof textColorVariants
+
+type Props = {
     children: React.ReactNode
-    color: ColorVariants
+    color: TextColorVariants
     className?: string
 }
 
-const ColorText = (props: Props) => {
+export const ColorText = (props: Props) => {
     const { children, color, className } = props
     
     return (
-        <span className={cn(styles[`text_${color}`], className)}>
+        <span className={cn(textColorVariants[color], className)}>
             {children}
         </span>
     )
 }
-
-export default ColorText

@@ -1,14 +1,22 @@
 import React from 'react'
-import { useAppSelector } from '@/1_app/store/lib/hooks'
-import { TaskItemActions, selectPendingDeleteId } from '@/5_entities/task'
+import { selectPendingDeleteId, TaskItemActions } from '@/5_entities/task'
+import type { TaskProps } from '@/5_entities/task'
 import { Label } from '@/6_shared/ui/'
-import { cn, useInlineEdit, useDeleteConfirmation } from '@/6_shared/lib/'
-import type { TaskProps } from '../model/taskTypes'
+import { cn, useAppSelector, useDeleteConfirmation, useInlineEdit } from '@/6_shared/lib/'
 
 import styles from './TaskItem.module.css'
 
-const TaskItem = (props: TaskProps) => {
-    const { id, title, completed, onToggle, onEdit, onDelete, onStartDelete, onCancelDelete } = props
+export const TaskItem = (props: TaskProps) => {
+    const {
+        id,
+        title,
+        completed,
+        onToggle,
+        onEdit,
+        onDelete,
+        onStartDelete,
+        onCancelDelete
+    } = props
     
     const pendingDeleteId = useAppSelector(selectPendingDeleteId)
     const isConfirming = pendingDeleteId === id
@@ -106,5 +114,3 @@ const TaskItem = (props: TaskProps) => {
         </li>
     )
 }
-
-export default TaskItem

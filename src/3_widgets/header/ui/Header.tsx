@@ -3,11 +3,12 @@ import { ColorText, Logo, Container } from '@/6_shared/ui/'
 
 import styles from './Header.module.css'
 
-const Header = () => {
+export const Header = () => {
     return (
         <header className={styles.header}>
             <Container className={styles.header__container}>
                 <ThemeSwitcher />
+                
                 <div className={styles.header__logo}>
                     <Logo width={26} height={39} />
                     <h1 className={styles.header__title}>
@@ -19,5 +20,3 @@ const Header = () => {
         </header>
     )
 }
-
-export default Header

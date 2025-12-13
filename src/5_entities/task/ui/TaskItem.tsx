@@ -1,5 +1,5 @@
 import React from 'react'
-import type { TaskProps } from '@/5_entities/task'
+import type { TaskProps } from '../model/taskTypes'
 import { Label } from '@/6_shared/ui/'
 import { cn, useAppSelector, useDeleteConfirmation, useInlineEdit } from '@/6_shared/lib/'
 import { selectPendingDeleteId } from '../model/taskSlice'

@@ -1,5 +1,5 @@
-import { cancelDelete } from '@/5_entities/task'
 import { useAppDispatch } from '@/6_shared/lib'
+import { cancelDelete } from '../taskSlice'
 
 export const useCancelDelete = () => {
     const dispatch = useAppDispatch()

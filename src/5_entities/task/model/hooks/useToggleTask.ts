@@ -1,5 +1,5 @@
-import { toggleTask } from '@/5_entities/task'
 import { useAppDispatch } from '@/6_shared/lib'
+import { toggleTask } from '../taskSlice'
 
 export const useToggleTask = () => {
     const dispatch = useAppDispatch()

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
-import { selectSearchQuery, setSearchQuery } from '@/4_features/filter-tasks'
 import { useAppDispatch, useAppSelector } from '@/6_shared/lib'
 import { Button, Input, Label } from '@/6_shared/ui'
+import { selectSearchQuery, setSearchQuery } from '../model/filterSlice'
 
 import { IoMdClose } from 'react-icons/io'
 

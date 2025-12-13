@@ -1,4 +1,4 @@
-import { TaskListEmpty } from '@/3_widgets/task-list'
+import { TaskListEmpty } from './TaskListEmpty'
 import {
     selectFilteredTasks,
     TaskItem,

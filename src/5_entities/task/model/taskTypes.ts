@@ -1,12 +1,12 @@
 import React from 'react'
 
-export interface Task {
+export type Task = {
     id: string
     title: string
     completed: boolean
 }
 
-export interface TaskProps {
+export type TaskProps = {
     id: string
     title: string
     completed: boolean
@@ -17,12 +17,12 @@ export interface TaskProps {
     onCancelDelete?: () => void
 }
 
-export interface TaskState {
+export type TaskState = {
     items: Task[]
     pendingDeleteId: string | null
 }
 
-export interface TaskItemActionsProps {
+export type TaskItemActionsProps = {
     isConfirming: boolean
     completed: boolean
     isEditing: boolean
@@ -30,4 +30,11 @@ export interface TaskItemActionsProps {
     onStartDelete: (event: React.MouseEvent) => void
     onConfirmDelete: (event: React.MouseEvent) => void
     onCancelDelete: (event: React.MouseEvent) => void
+}
+
+export type TaskFormProps = {
+    value: string
+    onChange: (value: string) => void
+    onSubmit: () => void
+    onClear?: () => void
 }

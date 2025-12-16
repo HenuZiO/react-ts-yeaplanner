@@ -1,6 +1,7 @@
 // UI Components
 export { TaskItem } from './ui/TaskItem'
 export { TaskStats } from './ui/TaskStats'
+export { TaskForm } from './ui/TaskForm'
 
 // Hooks
 export { useCancelDelete } from './model/hooks/useCancelDelete'

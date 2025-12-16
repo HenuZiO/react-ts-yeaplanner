@@ -1,4 +1,4 @@
-import  {  useState } from 'react'
+import { useState } from 'react'
 import { TaskForm } from '@/5_entities/task'
 import { useAddTask } from '../model/useAddTask'
 
@@ -16,6 +16,6 @@ export const AddTaskForm = () => {
     }
     
     return (
-        <TaskForm value={title} onChange={setTitle} onSubmit={handleSubmit} onClear={handleClear}/>
+        <TaskForm value={title} onChange={setTitle} onSubmit={handleSubmit} onClear={handleClear} />
     )
 }

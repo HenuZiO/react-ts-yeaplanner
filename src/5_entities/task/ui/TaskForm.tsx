@@ -23,8 +23,8 @@ export const TaskForm = (props: TaskFormProps) => {
     }
     
     const handleClear = () => {
-      onClear?.()
-      inputRef.current?.focus()
+        onClear?.()
+        inputRef.current?.focus()
     }
     
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {

@@ -1,4 +1,4 @@
-.todo_form {
+.task_form {
     display: flex;
     gap: 8px;
     z-index: 2;
@@ -7,41 +7,35 @@
     margin-bottom: 64px;
 }
 
-.todo_form__field {
+.task_form__field {
     position: relative;
     display: flex;
     flex-grow: 1;
 }
 
-.todo_form__input {
+.task_form__input {
     flex-grow: 1;
 }
 
-.todo_form__clear {
+.task_form__clear {
     position: absolute;
     right: -5px;
     top: 50%;
     transform: translateY(-50%);
 }
 
-.todo_form__button {
+.task_form__button {
     gap: 8px;
     height: 46px;
     font-size: 14px;
     z-index: 3;
 }
 
-.todo_form__button:hover {
+.task_form__button:hover {
     background-color: var(--color-blue);
 }
 
-.todo_form__button:focus-visible {
+.task_form__button:focus-visible {
     outline-color: var(--color-blue);
-}
-
-.todo_form__icon {
-    width: 16px;
-    height: 16px;
-    pointer-events: none;
 }
 

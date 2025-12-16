@@ -1,72 +1,21 @@
-import React, { useRef, useState } from 'react'
-import { Button, Input, Label } from '@/6_shared/ui'
+import  {  useState } from 'react'
+import { TaskForm } from '@/5_entities/task'
 import { useAddTask } from '../model/useAddTask'
-
-import { IoMdClose } from "react-icons/io";
-import { MdOutlineAddBox } from "react-icons/md";
-
-import styles from './AddTaskForm.module.css'
 
 export const AddTaskForm = () => {
     const [title, setTitle] = useState('')
-    const inputRef = useRef<HTMLInputElement | null>(null);
-    const handleAdd = useAddTask()
-    
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setTitle(event.target.value)
-    }
+    const addTask = useAddTask()
     
     const handleClear = () => {
         setTitle('')
-        inputRef.current?.focus()
     }
     
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        handleAdd(title)
+    const handleSubmit = () => {
+        addTask(title)
         setTitle('')
-        inputRef.current?.focus()
     }
     
     return (
-        <form className={styles.todo_form} onSubmit={handleSubmit}>
-            <div className={styles.todo_form__field}>
-                <Label
-                    className='visually-hidden'
-                >
-                    Введите название новой задачи
-                </Label>
-                
-                <Input
-                    className={styles.todo_form__input}
-                    ref={inputRef}
-                    value={title}
-                    onChange={handleChange}
-                    placeholder='Введите название новой задачи...'
-                    required={true}
-                />
-                
-                <Button
-                    className={styles.todo_form__clear}
-                    variant='clear'
-                    onClick={handleClear}
-                    aria-label='Очистить поле'
-                    title='Очистить поле'
-                >
-                    {title && <IoMdClose size={16} />}
-                </Button>
-            </div>
-            
-            <Button
-                className={styles.todo_form__button}
-                type='submit'
-                variant='blue'
-                aria-label='Добавить задачу'
-                title='Добавить задачу'
-            >
-                <MdOutlineAddBox size={16} />
-                <span>Добавить</span>
-            </Button>
-        </form>
+        <TaskForm value={title} onChange={setTitle} onSubmit={handleSubmit} onClear={handleClear}/>
     )
 }

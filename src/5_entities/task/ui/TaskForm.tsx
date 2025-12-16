@@ -8,13 +8,13 @@ import { MdOutlineAddBox } from "react-icons/md";
 import styles from './TaskForm.module.css'
 
 export const TaskForm = (props: TaskFormProps) => {
-    const { value, onChange, onSubmit, onClear } = props
+    const { value, submitLabel = 'Добавить' ,onChange, onSubmit, onClear } = props
     
     const inputRef = useRef<HTMLInputElement | null>(null);
     
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        onSubmit?.()
+        onSubmit()
         inputRef.current?.focus()
     }
     
@@ -29,7 +29,7 @@ export const TaskForm = (props: TaskFormProps) => {
     
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Escape') {
-            onChange('')
+            onClear?.()
             inputRef.current?.blur()
         }
     }
@@ -43,7 +43,7 @@ export const TaskForm = (props: TaskFormProps) => {
                     value={value}
                     onChange={handleChange}
                     onKeyDown={handleKeyDown}
-                    placeholder='Введите название новой задачи...'
+                    placeholder='Введите название задачи...'
                     required={true}
                 />
                 
@@ -64,11 +64,11 @@ export const TaskForm = (props: TaskFormProps) => {
                 className={styles.task_form__button}
                 type='submit'
                 variant='blue'
-                aria-label='Добавить задачу'
-                title='Добавить задачу'
+                aria-label={`${submitLabel} задачу`}
+                title={`${submitLabel} задачу`}
             >
                 <MdOutlineAddBox size={16} />
-                <span>Добавить</span>
+                <span>{submitLabel}</span>
             </Button>
         </form>
     )

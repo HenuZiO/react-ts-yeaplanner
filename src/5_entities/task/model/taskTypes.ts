@@ -34,6 +34,7 @@ export type TaskItemActionsProps = {
 
 export type TaskFormProps = {
     value: string
+    submitLabel?: string
     onChange: (value: string) => void
     onSubmit: () => void
     onClear?: () => void

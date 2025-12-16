@@ -1,4 +1,4 @@
-import { ThemeSwitcher } from '@/4_features/theme-switcher'
+import { ThemeSwitcher } from '@/4_features/toggle-theme'
 import { ColorText, Logo, Container } from '@/6_shared/ui/'
 
 import styles from './Header.module.css'

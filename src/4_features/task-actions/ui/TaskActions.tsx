@@ -1,13 +1,13 @@
 import { cn } from '@/6_shared/lib'
-import type { TaskItemActionsProps } from '../model/taskTypes'
+import type { TaskItemActionsProps } from '../model/taskActionsTypes'
 
 import { IoIosCheckmarkCircle, IoMdClose } from 'react-icons/io'
 import { FiEdit3 } from 'react-icons/fi'
 import { MdOutlineDelete } from 'react-icons/md'
 
-import styles from './TaskItem.module.css'
+import styles from './TaskActions.module.css'
 
-export const TaskItemActions = (props: TaskItemActionsProps) => {
+export const TaskActions = (props: TaskItemActionsProps) => {
     const {
         isConfirming,
         completed,

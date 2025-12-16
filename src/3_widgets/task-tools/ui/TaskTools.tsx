@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { TaskFilterSelect, TaskSearchInput } from '@/4_features/filter-tasks/'
-import { DeleteTasksButton, useDeleteTasks } from '@/4_features/delete-all-tasks-button'
+import { DeleteTasksButton, useDeleteTasks } from '@/4_features/delete-tasks'
 import { selectTasks, TaskStats } from '@/5_entities/task/'
 import { useAppSelector } from '@/6_shared/lib'
 import { Modal } from '@/6_shared/ui'

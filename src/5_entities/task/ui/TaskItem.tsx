@@ -1,13 +1,13 @@
 import React from 'react'
-import type { TaskProps } from '../model/taskTypes'
 import { Label } from '@/6_shared/ui/'
 import { cn, useAppSelector, useDeleteConfirmation, useInlineEdit } from '@/6_shared/lib/'
 import { selectPendingDeleteId } from '../model/taskSlice'
-import { TaskItemActions } from './TaskItemActions'
+import { TaskActions } from '../../../4_features/task-actions/ui/TaskActions'
 
 import styles from './TaskItem.module.css'
+import type { TaskItemProps } from '../model/taskTypes'
 
-export const TaskItem = (props: TaskProps) => {
+export const TaskItem = (props: TaskItemProps) => {
     const {
         id,
         title,
@@ -103,7 +103,7 @@ export const TaskItem = (props: TaskProps) => {
                 </Label>
             )}
             
-            <TaskItemActions
+            <TaskActions
                 isConfirming={isConfirming}
                 completed={completed}
                 isEditing={isEditing}

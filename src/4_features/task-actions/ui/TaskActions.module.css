@@ -1,0 +1,55 @@
+.task__actions {
+    display: flex;
+    gap: 8px;
+    align-self: start;
+    position: relative;
+}
+
+.task__icon {
+    display: inline-flex;
+    margin-top: 3px;
+    transition-duration: 0.2s;
+}
+
+.task__edit,
+.task__delete,
+.task__confirm,
+.task__cancel {
+    border: 0;
+    color: var(--color-gray-300);
+    background: transparent;
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    position: relative;
+}
+
+.task__confirm {
+    color: var(--color-blue-dark);
+}
+
+.task__edit {
+    opacity: 1;
+}
+
+.task__edit:hover,
+.task__delete:hover,
+.task__confirm:hover {
+    color: var(--color-blue);
+}
+
+.task__cancel:hover {
+    color: var(--color-gray-200);
+}
+
+.task__edit:focus-visible,
+.task__delete:focus-visible,
+.task__confirm:focus-visible,
+.task__cancel:focus-visible {
+    outline: 1px solid var(--color-blue);
+    outline-offset: 2px;
+}
+
+.task__edit_hidden {
+    opacity: 0.3;
+    pointer-events: none;
+}

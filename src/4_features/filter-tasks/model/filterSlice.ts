@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '@/1_app/store'
 import type { FilterState, TaskFilter } from './filterTypes'
 
 const initialState: FilterState = {
@@ -22,8 +21,5 @@ const filterSlice = createSlice({
 })
 
 export const { setFilter, setSearchQuery } = filterSlice.actions
-
-export const selectFilter = (state: RootState) => state.filters.filter
-export const selectSearchQuery = (state: RootState) => state.filters.searchQuery
 
 export default filterSlice.reducer

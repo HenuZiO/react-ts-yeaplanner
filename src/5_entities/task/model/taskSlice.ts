@@ -1,11 +1,9 @@
-import { createSelector, createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '@/1_app/store'
 import type { Task, TaskState } from './taskTypes'
 
 const initialState: TaskState = {
-    items: [],
-    pendingDeleteId: null
+    items: []
 }
 
 const taskSlice = createSlice({
@@ -35,59 +33,13 @@ const taskSlice = createSlice({
         },
         deleteTask: (state, action: PayloadAction<string>) => {
             state.items = state.items.filter(task => task.id !== action.payload)
-            state.pendingDeleteId = null
         },
         clearAllTasks: (state) => {
             state.items = []
-        },
-        startDelete: (state, action: PayloadAction<string>) => {
-            state.pendingDeleteId = action.payload
-        },
-        cancelDelete: (state) => {
-            state.pendingDeleteId = null
-        },
+        }
     }
 })
 
-export const {
-    addTask,
-    toggleTask,
-    deleteTask,
-    editTask,
-    clearAllTasks,
-    startDelete,
-    cancelDelete
-} = taskSlice.actions
-
-export const selectTasks = (state: RootState) => state.tasks.items
-export const selectTasksCount = (state: RootState) => state.tasks.items.length
-export const selectCompletedTasksCount = (state: RootState) => state.tasks.items.filter(task => task.completed).length
-export const selectFilteredTasks = createSelector(
-    [
-        selectTasks,
-        (state: RootState) => state.filters.filter,
-        (state: RootState) => state.filters.searchQuery
-    ],
-    (tasks, filter, searchQuery) => {
-        let filtered = tasks
-        
-        if (filter === 'active') {
-            filtered = filtered.filter(task => !task.completed)
-        } else if (filter === 'completed') {
-            filtered = filtered.filter(task => task.completed)
-        }
-        
-        if (searchQuery.trim()) {
-            const query = searchQuery.toLowerCase()
-            
-            filtered = filtered.filter(task =>
-                task.title.toLowerCase().includes(query)
-            )
-        }
-        
-        return filtered
-    }
-)
-export const selectPendingDeleteId = (state: RootState) => state.tasks.pendingDeleteId
+export const { addTask, toggleTask, editTask, deleteTask, clearAllTasks } = taskSlice.actions
 
 export default taskSlice.reducer

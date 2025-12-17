@@ -1,5 +1,3 @@
-export { useAppSelector, useAppDispatch } from './hooks/store/hooks'
-export { useDeleteConfirmation } from './hooks/ui/useDeleteConfirmation'
-export { useInlineEdit } from './hooks/ui/useInlineEdit'
+export { useAppSelector, useAppDispatch } from './hooks/store'
 
 export { cn } from './utils/classNames'

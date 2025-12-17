@@ -1,20 +1,13 @@
 // UI Components
-export { TaskItem } from './ui/TaskItem'
-export { TaskStats } from './ui/TaskStats'
-export { TaskForm } from './ui/TaskForm'
-
-// Hooks
-export { useCancelDelete } from './model/hooks/useCancelDelete'
-export { useDeleteTask } from './model/hooks/useDeleteTask'
-export { useEditTask } from './model/hooks/useEditTask'
-export { useStartDelete } from './model/hooks/useStartDelete'
-export { useToggleTask } from './model/hooks/useToggleTask'
+export { TaskItem } from './ui/task-item'
+export { TaskStats } from './ui/task-stats'
+export { TaskForm } from './ui/task-form'
 
 // Main Reducer
 export { default as tasksReducer } from './model/taskSlice'
 
 // Reducers
-export { addTask, clearAllTasks } from './model/taskSlice'
+export { addTask, toggleTask, editTask, deleteTask, clearAllTasks } from './model/taskSlice'
 
 // Selectors
-export { selectTasks, selectFilteredTasks } from './model/taskSlice'
+export { selectTasks, selectTaskById, selectFilteredTasks } from './model/taskSelectors'

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { selectTheme } from '@/4_features/theme-switcher'
+import { selectTheme } from '@/4_features/toggle-theme'
 import { useAppSelector } from '@/6_shared/lib'
 
 interface Props {

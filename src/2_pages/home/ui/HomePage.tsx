@@ -1,7 +1,7 @@
 import { Header } from '@/3_widgets/header'
 import { TaskList } from '@/3_widgets/task-list'
 import { TaskTools } from '@/3_widgets/task-tools'
-import { AddTaskForm } from '@/4_features/add-task-form'
+import { AddTaskForm } from '@/4_features/add-task'
 import { Container } from '@/6_shared/ui/'
 
 export const HomePage = () => {

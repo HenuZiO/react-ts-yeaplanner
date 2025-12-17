@@ -1,0 +1,18 @@
+.button__icon {
+    display: inline-flex;
+    margin-top: 3px;
+}
+
+.button__edit,
+.button__delete,
+.button__confirm,
+.button__cancel {
+    border: 0;
+    background: transparent;
+    border-radius: 4px;
+    color: var(--color-gray-300);
+}
+
+.button__confirm {
+    color: var(--color-blue-dark);
+}

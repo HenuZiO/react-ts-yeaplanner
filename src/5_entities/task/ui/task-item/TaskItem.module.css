@@ -1,0 +1,25 @@
+.item {
+    display: grid;
+    grid-template-columns: 24px 1fr auto;
+    align-items: center;
+    gap: 16px;
+    border-radius: 8px;
+    padding: 16px;
+    max-height: 60px;
+    background-color: var(--color-gray-500);
+    border: 1px solid var(--color-gray-400);
+    transition-duration: 0.3s;
+}
+
+.item__placeholder {
+    grid-column: 2 / -1;
+    height: 60px;
+}
+
+.item__deleting {
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+    transform: scaleY(50%);
+    transform-origin: top;
+}

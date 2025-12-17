@@ -1,0 +1,10 @@
+.actions {
+    display: flex;
+    gap: 8px;
+    align-self: start;
+}
+
+.muted {
+    opacity: 0.3;
+    pointer-events: none;
+}

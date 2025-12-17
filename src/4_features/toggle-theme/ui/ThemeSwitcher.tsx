@@ -1,5 +1,6 @@
 import { cn, useAppDispatch, useAppSelector } from '@/6_shared/lib'
-import { selectTheme, toggleTheme } from '../model/themeSlice'
+import { toggleTheme } from '../model/themeSlice'
+import { selectTheme } from '../model/themeSelectors'
 
 import { GoMoon, GoSun } from "react-icons/go";
 
@@ -22,6 +23,7 @@ export const ThemeSwitcher = () => {
             <span className={cn(styles.switcher__icon, styles.switcher__icon__sun)}>
                 <GoSun size={16} />
             </span>
+            
             <span className={cn(styles.switcher__icon, styles.switcher__icon__moon)}>
                 <GoMoon size={15} />
             </span>

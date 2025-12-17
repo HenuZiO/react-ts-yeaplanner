@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { Button, Input } from '@/6_shared/ui'
-import type { TaskFormProps } from '../model/taskTypes'
+import type { TaskFormProps } from '../../model/taskTypes'
 
 import { IoMdClose } from "react-icons/io";
 import { MdOutlineAddBox } from "react-icons/md";

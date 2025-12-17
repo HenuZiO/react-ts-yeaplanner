@@ -1,23 +1,20 @@
+import type React from 'react'
+
 export type Task = {
     id: string
     title: string
     completed: boolean
 }
 
-export type TaskItemProps = {
-    id: string
-    title: string
-    completed: boolean
-    onToggle?: () => void
-    onEdit?: (newTitle: string) => void
-    onDelete?: () => void
-    onStartDelete?: (id: string) => void
-    onCancelDelete?: () => void
-}
-
 export type TaskState = {
     items: Task[]
-    pendingDeleteId: string | null
+}
+
+export type TaskItemProps = {
+    isDeleting?: boolean
+    checkboxSlot?: React.ReactNode
+    contentSlot?: React.ReactNode
+    actionsSlot?: React.ReactNode
 }
 
 export type TaskFormProps = {

@@ -1,11 +1,10 @@
-import React from 'react'
+export type TaskActionsProps = {
+    taskId: string
+}
 
-export type TaskItemActionsProps = {
-    isConfirming: boolean
-    completed: boolean
-    isEditing: boolean
-    onEdit: (event: React.MouseEvent) => void
-    onStartDelete: (event: React.MouseEvent) => void
-    onConfirmDelete: (event: React.MouseEvent) => void
-    onCancelDelete: (event: React.MouseEvent) => void
+export type TaskActionsState= {
+    pendingDeleteId: string | null
+    editingTaskId: string | null
+    editDraft: string
+    deletingTaskIds: Record<string, boolean>
 }

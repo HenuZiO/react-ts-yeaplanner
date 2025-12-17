@@ -1,6 +1,6 @@
 import { useAppSelector } from '@/6_shared/lib'
-import { ColorText } from '@/6_shared/ui/'
-import { selectTasksCount, selectCompletedTasksCount } from '../model/taskSlice'
+import { ColorText } from '@/6_shared/ui'
+import { selectTasksCount, selectCompletedTasksCount } from '../../model/taskSelectors'
 
 import styles from './TaskStats.module.css'
 

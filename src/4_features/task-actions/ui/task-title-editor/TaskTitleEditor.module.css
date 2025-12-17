@@ -1,0 +1,42 @@
+.input {
+    outline: none;
+    background-color: var(--color-gray-400);
+    border-radius: 5px;
+    border: none;
+    color: var(--color-gray-200);
+    padding: 4px 0;
+}
+
+.label {
+    display: flex;
+    align-items: start;
+    color: var(--color-gray-200);
+    cursor: pointer;
+}
+
+.text {
+    position: relative;
+    display: inline-flex;
+    color: inherit;
+}
+
+.text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 1px;
+    width: 100%;
+    background-color: var(--color-gray-300);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.text__completed {
+    color: var(--color-gray-300);
+}
+
+.text__completed::after {
+    transform: scaleX(1);
+}
